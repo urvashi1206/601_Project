@@ -34,15 +34,18 @@ public class ArrowMovement : MonoBehaviour
                 {
                     if (gameObject.CompareTag("X")) 
                     {
-                        scene.transform.rotation *= Quaternion.Euler(angle, 0, 0);
+                        scene.transform.rotation = Quaternion.Euler(angle, 0, 0) * scene.transform.rotation;
+                        //scene.transform.rotation *= Quaternion.AngleAxis(angle, Vector3.right);
                     }
                     else if (gameObject.CompareTag("Y"))
                     {
-                        scene.transform.rotation *= Quaternion.Euler(0, angle, 0);
+                        scene.transform.rotation = Quaternion.Euler(0, angle, 0) * scene.transform.rotation;
+                        //scene.transform.rotation *= Quaternion.AngleAxis(angle, Vector3.up);
                     }
                     else if(gameObject.CompareTag("Z"))
                     {
-                        scene.transform.rotation *= Quaternion.Euler(0, 0, angle);
+                        scene.transform.rotation = Quaternion.Euler(0, 0, angle) * scene.transform.rotation;
+                        //scene.transform.rotation *= Quaternion.AngleAxis(angle, Vector3.forward);
                     }
                 }
             }
