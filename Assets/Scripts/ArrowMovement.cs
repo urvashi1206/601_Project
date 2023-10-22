@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -15,16 +16,18 @@ public class ArrowMovement : MonoBehaviour
     private Ray _ray;
     private RaycastHit _hit;
     private bool coroutineIsFinished = true;
-
+    public GameObject character;
     // Start is called before the first frame update
     void Start()
     {
         m_Camera = Camera.main;
+        character = GameObject.Find("character");
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if(Input.GetMouseButtonDown(0))
         {
             _ray =m_Camera.ScreenPointToRay(Input.mousePosition);
@@ -48,7 +51,11 @@ public class ArrowMovement : MonoBehaviour
                             StopCoroutine("DisableYButtonsBoxCollider");
                             StopCoroutine("DisableZButtonsBoxCollider");
                         }
+                        Vector3 dir = new Vector3(0, 0, angle);
+                        character.transform.LookAt(character.transform.position + dir);
                         scene.transform.rotation = Quaternion.Euler(angle, 0, 0) * scene.transform.rotation;
+                        //Debug.Log(character.transform.position + dir);
+                        //Debug.Log(character.transform.position);
                     }
                     else if (gameObject.CompareTag("Y"))
                     {
@@ -82,7 +89,11 @@ public class ArrowMovement : MonoBehaviour
                             StopCoroutine("DisableYButtonsBoxCollider");
                             StopCoroutine("DisableZButtonsBoxCollider");
                         }
+                        Vector3 dir = new Vector3(-angle, 0, 0);
+                        character.transform.LookAt(character.transform.position + dir);
                         scene.transform.rotation = Quaternion.Euler(0, 0, angle) * scene.transform.rotation;
+                        //Debug.Log(character.transform.position + dir);
+                        //Debug.Log(character.transform.position);
                     }
                 }
             }
@@ -95,7 +106,7 @@ public class ArrowMovement : MonoBehaviour
         GameObject[] xObjects = GameObject.FindGameObjectsWithTag("X");
         foreach (GameObject xObject in xObjects)
         {
-            Debug.Log("False");
+            //Debug.Log("False");
             xObject.GetComponent<BoxCollider>().enabled = false;
         }
 
@@ -103,7 +114,7 @@ public class ArrowMovement : MonoBehaviour
 
         foreach (GameObject xObject in xObjects)
         {
-            Debug.Log("True");
+            //Debug.Log("True");
             xObject.GetComponent<BoxCollider>().enabled = true;
         }
         coroutineIsFinished = true;
@@ -115,7 +126,7 @@ public class ArrowMovement : MonoBehaviour
         GameObject[] yObjects = GameObject.FindGameObjectsWithTag("Y");
         foreach (GameObject yObject in yObjects)
         {
-            Debug.Log("False");
+            //Debug.Log("False");
             yObject.GetComponent<BoxCollider>().enabled = false;
         }
 
@@ -123,7 +134,7 @@ public class ArrowMovement : MonoBehaviour
 
         foreach (GameObject yObject in yObjects)
         {
-            Debug.Log("True");
+            //Debug.Log("True");
             yObject.GetComponent<BoxCollider>().enabled = true;
         }
         coroutineIsFinished = true;
@@ -135,7 +146,7 @@ public class ArrowMovement : MonoBehaviour
         GameObject[] zObjects = GameObject.FindGameObjectsWithTag("Z");
         foreach (GameObject zObject in zObjects)
         {
-            Debug.Log("False");
+            //Debug.Log("False");
             zObject.GetComponent<BoxCollider>().enabled = false;
         }
 
@@ -143,7 +154,7 @@ public class ArrowMovement : MonoBehaviour
 
         foreach (GameObject zObject in zObjects)
         {
-            Debug.Log("True");
+            //Debug.Log("True");
             zObject.GetComponent<BoxCollider>().enabled = true;
         }
         coroutineIsFinished = true;
