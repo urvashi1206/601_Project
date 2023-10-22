@@ -34,8 +34,10 @@ public class CharacterMovement : MonoBehaviour
             {
                 GetComponent<Rigidbody>().isKinematic = true;
                 GetComponent<BoxCollider>().enabled = false;
+                //character stand up
                 transform.position += new Vector3(0, 1, 0);
                 transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+                //character facing endpoint
                 Vector3 dir = EndSpot.transform.position;
                 transform.LookAt(new Vector3(dir.x, transform.position.y, dir.z));
                 head.transform.LookAt(dir);
