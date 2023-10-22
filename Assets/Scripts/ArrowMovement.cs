@@ -53,9 +53,11 @@ public class ArrowMovement : MonoBehaviour
                             StopCoroutine("DisableYButtonsBoxCollider");
                             StopCoroutine("DisableZButtonsBoxCollider");
                         }
+                        //character facing fall side
                         Vector3 dir = new Vector3(0, 0, angle);
                         character.transform.LookAt(character.transform.position + dir);
                         character_head.transform.LookAt(character_head.transform.position + dir);
+                        //level rotation
                         scene.transform.rotation = Quaternion.Euler(angle, 0, 0) * scene.transform.rotation;
                         //Debug.Log(character.transform.position + dir);
                         //Debug.Log(character.transform.position);
@@ -92,9 +94,11 @@ public class ArrowMovement : MonoBehaviour
                             StopCoroutine("DisableYButtonsBoxCollider");
                             StopCoroutine("DisableZButtonsBoxCollider");
                         }
+                        //character facing fall side
                         Vector3 dir = new Vector3(-angle, 0, 0);
                         character.transform.LookAt(character.transform.position + dir);
                         character_head.transform.LookAt(character_head.transform.position + dir);
+                        //level rotation
                         scene.transform.rotation = Quaternion.Euler(0, 0, angle) * scene.transform.rotation;
                         //Debug.Log(character.transform.position + dir);
                         //Debug.Log(character.transform.position);
