@@ -13,6 +13,10 @@ public class CharacterMovement : MonoBehaviour
     {
         head = GameObject.Find("head");
         EndSpot = GameObject.Find("EndingSpot");
+        //character facing endpoint
+        Vector3 dir = EndSpot.transform.position;
+        transform.LookAt(new Vector3(dir.x, transform.position.y, dir.z));
+        head.transform.LookAt(dir);
     }
 
     // Update is called once per frame
