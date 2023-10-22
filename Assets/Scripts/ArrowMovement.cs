@@ -14,6 +14,7 @@ public class ArrowMovement : MonoBehaviour
 
     private Ray _ray;
     private RaycastHit _hit;
+    private bool coroutineIsFinished = true;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class ArrowMovement : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            _ray=m_Camera.ScreenPointToRay(Input.mousePosition);
+            _ray =m_Camera.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(_ray, out _hit, 1000f))
             {
@@ -34,21 +35,117 @@ public class ArrowMovement : MonoBehaviour
                 {
                     if (gameObject.CompareTag("X")) 
                     {
+                        if (coroutineIsFinished)
+                        {
+                            StartCoroutine("DisableXButtonsBoxCollider");
+                            StartCoroutine("DisableYButtonsBoxCollider");
+                            StartCoroutine("DisableZButtonsBoxCollider");
+                        }
+                        else
+                        {
+                            //If the coroutine is still going on we stop it
+                            StopCoroutine("DisableXButtonsBoxCollider");
+                            StopCoroutine("DisableYButtonsBoxCollider");
+                            StopCoroutine("DisableZButtonsBoxCollider");
+                        }
                         scene.transform.rotation = Quaternion.Euler(angle, 0, 0) * scene.transform.rotation;
-                        //scene.transform.rotation *= Quaternion.AngleAxis(angle, Vector3.right);
                     }
                     else if (gameObject.CompareTag("Y"))
                     {
+                        if (coroutineIsFinished)
+                        {
+                            StartCoroutine("DisableXButtonsBoxCollider");
+                            StartCoroutine("DisableYButtonsBoxCollider");
+                            StartCoroutine("DisableZButtonsBoxCollider");
+                        }
+                        else
+                        {
+                            //If the coroutine is still going on we stop it
+                            StopCoroutine("DisableXButtonsBoxCollider");
+                            StopCoroutine("DisableYButtonsBoxCollider");
+                            StopCoroutine("DisableZButtonsBoxCollider");
+                        }
                         scene.transform.rotation = Quaternion.Euler(0, angle, 0) * scene.transform.rotation;
-                        //scene.transform.rotation *= Quaternion.AngleAxis(angle, Vector3.up);
                     }
                     else if(gameObject.CompareTag("Z"))
                     {
+                        if (coroutineIsFinished)
+                        {
+                            StartCoroutine("DisableXButtonsBoxCollider");
+                            StartCoroutine("DisableYButtonsBoxCollider");
+                            StartCoroutine("DisableZButtonsBoxCollider");
+                        }
+                        else
+                        {
+                            //If the coroutine is still going on we stop it
+                            StopCoroutine("DisableXButtonsBoxCollider");
+                            StopCoroutine("DisableYButtonsBoxCollider");
+                            StopCoroutine("DisableZButtonsBoxCollider");
+                        }
                         scene.transform.rotation = Quaternion.Euler(0, 0, angle) * scene.transform.rotation;
-                        //scene.transform.rotation *= Quaternion.AngleAxis(angle, Vector3.forward);
                     }
                 }
             }
         }
+    }
+
+    private IEnumerator DisableXButtonsBoxCollider()
+    {
+        coroutineIsFinished = false;
+        GameObject[] xObjects = GameObject.FindGameObjectsWithTag("X");
+        foreach (GameObject xObject in xObjects)
+        {
+            Debug.Log("False");
+            xObject.GetComponent<BoxCollider>().enabled = false;
+        }
+
+        yield return new WaitForSeconds(4.0f);
+
+        foreach (GameObject xObject in xObjects)
+        {
+            Debug.Log("True");
+            xObject.GetComponent<BoxCollider>().enabled = true;
+        }
+        coroutineIsFinished = true;
+    }
+
+    private IEnumerator DisableYButtonsBoxCollider()
+    {
+        coroutineIsFinished = false;
+        GameObject[] yObjects = GameObject.FindGameObjectsWithTag("Y");
+        foreach (GameObject yObject in yObjects)
+        {
+            Debug.Log("False");
+            yObject.GetComponent<BoxCollider>().enabled = false;
+        }
+
+        yield return new WaitForSeconds(4.0f);
+
+        foreach (GameObject yObject in yObjects)
+        {
+            Debug.Log("True");
+            yObject.GetComponent<BoxCollider>().enabled = true;
+        }
+        coroutineIsFinished = true;
+    }
+
+    private IEnumerator DisableZButtonsBoxCollider()
+    {
+        coroutineIsFinished = false;
+        GameObject[] zObjects = GameObject.FindGameObjectsWithTag("Z");
+        foreach (GameObject zObject in zObjects)
+        {
+            Debug.Log("False");
+            zObject.GetComponent<BoxCollider>().enabled = false;
+        }
+
+        yield return new WaitForSeconds(4.0f);
+
+        foreach (GameObject zObject in zObjects)
+        {
+            Debug.Log("True");
+            zObject.GetComponent<BoxCollider>().enabled = true;
+        }
+        coroutineIsFinished = true;
     }
 }
