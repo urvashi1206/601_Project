@@ -17,11 +17,13 @@ public class ArrowMovement : MonoBehaviour
     private RaycastHit _hit;
     private bool coroutineIsFinished = true;
     public GameObject character;
+    public GameObject character_head;
     // Start is called before the first frame update
     void Start()
     {
         m_Camera = Camera.main;
         character = GameObject.Find("character");
+        character_head = GameObject.Find("head");
     }
 
     // Update is called once per frame
@@ -53,6 +55,7 @@ public class ArrowMovement : MonoBehaviour
                         }
                         Vector3 dir = new Vector3(0, 0, angle);
                         character.transform.LookAt(character.transform.position + dir);
+                        character_head.transform.LookAt(character_head.transform.position + dir);
                         scene.transform.rotation = Quaternion.Euler(angle, 0, 0) * scene.transform.rotation;
                         //Debug.Log(character.transform.position + dir);
                         //Debug.Log(character.transform.position);
@@ -91,6 +94,7 @@ public class ArrowMovement : MonoBehaviour
                         }
                         Vector3 dir = new Vector3(-angle, 0, 0);
                         character.transform.LookAt(character.transform.position + dir);
+                        character_head.transform.LookAt(character_head.transform.position + dir);
                         scene.transform.rotation = Quaternion.Euler(0, 0, angle) * scene.transform.rotation;
                         //Debug.Log(character.transform.position + dir);
                         //Debug.Log(character.transform.position);

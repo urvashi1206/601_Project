@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class CharacterMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     float timer = 0;
+    public GameObject head;
+    public GameObject EndSpot;
     void Start()
     {
-        
+        head = GameObject.Find("head");
+        EndSpot = GameObject.Find("EndingSpot");
     }
 
     // Update is called once per frame
@@ -33,8 +36,11 @@ public class CharacterMovement : MonoBehaviour
                 GetComponent<BoxCollider>().enabled = false;
                 transform.position += new Vector3(0, 1, 0);
                 transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
-                GetComponent<BoxCollider>().enabled = true;
+                Vector3 dir = EndSpot.transform.position;
+                transform.LookAt(new Vector3(dir.x, transform.position.y, dir.z));
+                head.transform.LookAt(dir);
                 GetComponent<Rigidbody>().isKinematic = false;
+                GetComponent<BoxCollider>().enabled = true;
             }
             timer = 0;
         }
