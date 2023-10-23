@@ -59,8 +59,6 @@ public class ArrowMovement : MonoBehaviour
                         character_head.transform.LookAt(character_head.transform.position + dir);
                         //level rotation
                         scene.transform.rotation = Quaternion.Euler(angle, 0, 0) * scene.transform.rotation;
-                        //Debug.Log(character.transform.position + dir);
-                        //Debug.Log(character.transform.position);
                     }
                     else if (gameObject.CompareTag("Y"))
                     {
@@ -100,8 +98,6 @@ public class ArrowMovement : MonoBehaviour
                         character_head.transform.LookAt(character_head.transform.position + dir);
                         //level rotation
                         scene.transform.rotation = Quaternion.Euler(0, 0, angle) * scene.transform.rotation;
-                        //Debug.Log(character.transform.position + dir);
-                        //Debug.Log(character.transform.position);
                     }
                 }
             }

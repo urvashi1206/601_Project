@@ -4350,7 +4350,6 @@ GameObject:
   - component: {fileID: 5083343645311717336}
   - component: {fileID: 6809227897509420009}
   - component: {fileID: 3907907510635890954}
-  - component: {fileID: 2987044203007735619}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -4388,6 +4387,7 @@ GameObject:
   - component: {fileID: 8701444310356985340}
   - component: {fileID: 7985468318399830254}
   - component: {fileID: 199665926270875116}
+  - component: {fileID: 8701444310356985341}
   m_Layer: 0
   m_Name: endpoint
   m_TagString: Untagged
@@ -4545,7 +4545,6 @@ GameObject:
   - component: {fileID: 6428885574246048074}
   - component: {fileID: 3179223319754198000}
   - component: {fileID: 4173748837124839237}
-  - component: {fileID: 7851214189574216359}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -4595,27 +4594,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2987044203007735619
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400055707136514929}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.99999994, z: 1.0000001}
-  m_Center: {x: 0.0000019073486, y: 0, z: -0.00000023841858}
 --- !u!23 &3017969984118251772
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5058,27 +5036,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &5552384436082731787
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7346781489021408549}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.99999994, z: 1.0000001}
-  m_Center: {x: 0.0000019073486, y: 0, z: -0.00000023841858}
 --- !u!33 &5610444063081742706
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5293,7 +5250,6 @@ GameObject:
   - component: {fileID: 5610444063081742706}
   - component: {fileID: 6758840822127594675}
   - component: {fileID: 5983165454929157810}
-  - component: {fileID: 5552384436082731787}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -5337,27 +5293,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4702103489036557126}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7851214189574216359
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2606967681152063541}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.99999994, z: 1.0000001}
-  m_Center: {x: 0.0000019073486, y: 0, z: -0.00000023841858}
 --- !u!33 &7898916353312527072
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5782,6 +5717,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4702103489036557126}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8701444310356985341
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527571085711548053}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6, y: 4, z: 2.0000005}
+  m_Center: {x: 0.00000071525574, y: 0.014680326, z: -0.0000010728836}
 --- !u!136 &8881174537051599464
 CapsuleCollider:
   m_ObjectHideFlags: 0

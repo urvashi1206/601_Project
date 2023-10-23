@@ -3211,7 +3211,6 @@ GameObject:
   - component: {fileID: 2992336916870698883}
   - component: {fileID: 4149678237496203842}
   - component: {fileID: 3986493759511758915}
-  - component: {fileID: 2978198278411927034}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -3242,27 +3241,6 @@ CapsuleCollider:
   m_Height: 0.019999996
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: 0.00000023841858}
---- !u!65 &625923387748879446
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4645296985778966212}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.99999994, z: 1.0000001}
-  m_Center: {x: 0.0000019073486, y: 0, z: -0.00000023841858}
 --- !u!4 &627515252176177979
 Transform:
   m_ObjectHideFlags: 0
@@ -3469,27 +3447,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2978198278411927034
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121497558944777172}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.99999994, z: 1.0000001}
-  m_Center: {x: 0.0000019073486, y: 0, z: -0.00000023841858}
 --- !u!33 &2992336916870698883
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3658,7 +3615,6 @@ GameObject:
   - component: {fileID: 4426293970865485755}
   - component: {fileID: 5207420624877919489}
   - component: {fileID: 6752731751857308084}
-  - component: {fileID: 625923387748879446}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -3891,27 +3847,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &5561588561160446386
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7050366798961511808}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.99999994, z: 1.0000001}
-  m_Center: {x: 0.0000019073486, y: 0, z: -0.00000023841858}
 --- !u!23 &5601171724828325389
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4054,7 +3989,6 @@ GameObject:
   - component: {fileID: 2508801486326667561}
   - component: {fileID: 4189925479211912472}
   - component: {fileID: 5936037436315066363}
-  - component: {fileID: 5561588561160446386}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -4073,6 +4007,7 @@ GameObject:
   - component: {fileID: 2061270715677430541}
   - component: {fileID: 759052887902506527}
   - component: {fileID: 7394906938081649437}
+  - component: {fileID: 7394906938081649438}
   m_Layer: 0
   m_Name: endpoint
   m_TagString: Untagged
@@ -4141,6 +4076,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7394906938081649438
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7136209449830107236}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6, y: 4, z: 2}
+  m_Center: {x: 0.00000071525574, y: 0.014680326, z: 0.0000009536743}
 --- !u!4 &8296756953943883322
 Transform:
   m_ObjectHideFlags: 0
