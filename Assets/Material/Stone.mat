@@ -30,23 +30,29 @@ Material:
   - _GRADSETTINGS_T_USE_GLOBAL
   - _HFOGENABLE_ON
   - _LMAPBLENDINGMODE_ADD
-  - _MODE_OPAQUE
-  - _SHADING_B_VERTEX_COLOR
-  - _SHADING_D_VERTEX_COLOR
+  - _MODE_TRANSPARENT
+  - _OTHERSETTINGS_ON
+  - _SHADING_B_SOLID_COLOR
+  - _SHADING_D_SOLID_COLOR
   - _SHADING_F_SOLIDCOLOR
   - _SHADING_L_SOLID_COLOR
   - _SHADING_R_SOLID_COLOR
   - _SHADING_T_SOLID_COLOR
+  - _SHOWBACK_ON
+  - _SHOWBOTTOM_ON
   - _SHOWCUSTOMSHADING_ON
   - _SHOWFRONT_ON
   - _SHOWLEFT_ON
+  - _SHOWLMAP_ON
   - _SHOWRIGHT_ON
+  - _SHOWTEXTURE_ON
   - _SHOWTOP_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -96,6 +102,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _AOEnable: 0
@@ -106,10 +116,13 @@ Material:
     - _BumpScale: 1
     - _ColorCorrectionEnable: 0
     - _Cull: 2
-    - _Cutoff: 0.5
+    - _Cutoff: 0.522
     - _DetailNormalMapScale: 1
+    - _DirX: 0
+    - _DirY: 0
     - _DontMix: 0
     - _DstBlend: 0
+    - _Exponent: 1
     - _Fade: 1
     - _FogHeight: 1
     - _FogYStartPos: -3.2
@@ -132,6 +145,7 @@ Material:
     - _GradientHeight_T: 1
     - _GradientSpace: 0
     - _HFogEnable: 1
+    - _Intensity: 1
     - _LMPower: 0
     - _LmapBlendingMode: 0
     - _LmapEnable: 0
@@ -139,7 +153,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OtherSettings: 0
+    - _OtherSettings: 1
     - _Parallax: 0.02
     - _RealtimeShadow: 0
     - _RimEnable: 0
@@ -169,10 +183,10 @@ Material:
     - _ShowFog: 0
     - _ShowFront: 1
     - _ShowGlobalGradientSettings: 0
-    - _ShowLMap: 0
+    - _ShowLMap: 1
     - _ShowLeft: 1
     - _ShowRight: 1
-    - _ShowTexture: 0
+    - _ShowTexture: 1
     - _ShowTop: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -185,12 +199,14 @@ Material:
     - _AOColor: {r: 1, g: 1, b: 1, a: 1}
     - _AmbientColor: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1: {r: 1, g: 1, b: 1, a: 0}
     - _Color1_B: {r: 0.6784314, g: 0.7568628, b: 0.8313726, a: 1}
     - _Color1_D: {r: 0.3529412, g: 0.47450984, b: 0.5921569, a: 1}
     - _Color1_F: {r: 0.6784314, g: 0.7568628, b: 0.8313726, a: 1}
-    - _Color1_L: {r: 0.3529412, g: 0.47450984, b: 0.5921569, a: 1}
+    - _Color1_L: {r: 0.3529412, g: 0.47450984, b: 0.5921569, a: 0}
     - _Color1_R: {r: 0.3529412, g: 0.47450984, b: 0.5921569, a: 1}
     - _Color1_T: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2: {r: 1, g: 1, b: 1, a: 0}
     - _Color2_B: {r: 1, g: 1, b: 1, a: 1}
     - _Color2_D: {r: 1, g: 1, b: 1, a: 1}
     - _Color2_F: {r: 0.18039216, g: 0.49411768, b: 0.7568628, a: 1}
@@ -215,5 +231,7 @@ Material:
     - _LMColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _TintColor: {r: 1, g: 1, b: 1, a: 1}
+    - _UpVector: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
