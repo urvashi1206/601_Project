@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5449080110633459848}
   - component: {fileID: 6287397598095232452}
   - component: {fileID: 2241387265768067804}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: TransparentCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

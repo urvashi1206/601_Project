@@ -27,7 +27,7 @@ public class CameraController : MonoBehaviour
         float sphereCastRadius = 0.5f;
         if (new Plane(transform.forward, transform.position).Raycast(r, out float dist))
         {
-            RaycastHit[] hits = Physics.SphereCastAll(r.GetPoint(dist), sphereCastRadius, transform.forward, dist - sphereCastRadius, 1 << 3); // Geometry layer
+            RaycastHit[] hits = Physics.SphereCastAll(r.GetPoint(dist), sphereCastRadius, transform.forward, dist - sphereCastRadius);
             foreach (RaycastHit hit in hits)
             {
                 if (hit.transform.TryGetComponent(out GridComponent c))
