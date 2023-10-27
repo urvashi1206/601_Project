@@ -12,6 +12,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - BOTTOMSOLID
   - FRONTSOLID
   - LIGHTMAP_AO
   - RIGHTSOLID
@@ -150,7 +151,7 @@ Material:
     - _Rotation_T: 0
     - _Saturation: 1
     - _Shading_B: 0
-    - _Shading_D: 0
+    - _Shading_D: 1
     - _Shading_F: 1
     - _Shading_L: 0
     - _Shading_R: 1
@@ -160,7 +161,7 @@ Material:
     - _ShowAO: 0
     - _ShowAmbientSettings: 0
     - _ShowBack: 0
-    - _ShowBottom: 0
+    - _ShowBottom: 1
     - _ShowColorCorrection: 0
     - _ShowCustomShading: 1
     - _ShowFog: 0
@@ -183,7 +184,7 @@ Material:
     - _AmbientColor: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color1_B: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1_D: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1_D: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
     - _Color1_F: {r: 0.36078432, g: 0.21960784, b: 0.13333334, a: 1}
     - _Color1_L: {r: 1, g: 1, b: 1, a: 1}
     - _Color1_R: {r: 0.5566038, g: 0.5244083, b: 0.4016999, a: 1}

@@ -12,6 +12,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - BOTTOMSOLID
   - LIGHTMAP_AO
   - TOPSOLID
   m_InvalidKeywords:
@@ -150,7 +151,7 @@ Material:
     - _Rotation_T: 0
     - _Saturation: 1
     - _Shading_B: 0
-    - _Shading_D: 0
+    - _Shading_D: 1
     - _Shading_F: 0
     - _Shading_L: 0
     - _Shading_R: 0
@@ -160,7 +161,7 @@ Material:
     - _ShowAO: 0
     - _ShowAmbientSettings: 0
     - _ShowBack: 1
-    - _ShowBottom: 0
+    - _ShowBottom: 1
     - _ShowColorCorrection: 0
     - _ShowCustomShading: 1
     - _ShowFog: 0
@@ -183,7 +184,7 @@ Material:
     - _AmbientColor: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color1_B: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1_D: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1_D: {r: 0.084905684, g: 0.0805002, b: 0.0805002, a: 1}
     - _Color1_F: {r: 1, g: 1, b: 1, a: 1}
     - _Color1_L: {r: 1, g: 1, b: 1, a: 1}
     - _Color1_R: {r: 1, g: 1, b: 1, a: 1}

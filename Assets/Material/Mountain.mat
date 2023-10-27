@@ -12,7 +12,10 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - BACKSOLID
+  - BOTTOMSOLID
   - FRONTSOLID
+  - LEFTSOLID
   - LIGHTMAP_AO
   - RIGHTSOLID
   - TOPSOLID
@@ -149,25 +152,25 @@ Material:
     - _Rotation_R: 0
     - _Rotation_T: 0
     - _Saturation: 1
-    - _Shading_B: 0
-    - _Shading_D: 0
+    - _Shading_B: 1
+    - _Shading_D: 1
     - _Shading_F: 1
-    - _Shading_L: 0
+    - _Shading_L: 1
     - _Shading_R: 1
     - _Shading_T: 1
     - _ShadowBlend: 0.5
     - _ShadowInfluence: 0.5
     - _ShowAO: 0
     - _ShowAmbientSettings: 0
-    - _ShowBack: 0
-    - _ShowBottom: 0
+    - _ShowBack: 1
+    - _ShowBottom: 1
     - _ShowColorCorrection: 0
     - _ShowCustomShading: 1
     - _ShowFog: 0
     - _ShowFront: 1
     - _ShowGlobalGradientSettings: 0
     - _ShowLMap: 1
-    - _ShowLeft: 0
+    - _ShowLeft: 1
     - _ShowRight: 1
     - _ShowTexture: 0
     - _ShowTop: 1
@@ -182,11 +185,11 @@ Material:
     - _AOColor: {r: 1, g: 1, b: 1, a: 1}
     - _AmbientColor: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1_B: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1_D: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1_F: {r: 0.36078432, g: 0.21960784, b: 0.13333334, a: 1}
-    - _Color1_L: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1_R: {r: 0.36084908, g: 0.4724564, b: 0.4811321, a: 1}
+    - _Color1_B: {r: 0.62379855, g: 0.8113208, b: 0.6452695, a: 1}
+    - _Color1_D: {r: 0.2264151, g: 0.17835529, b: 0.17835529, a: 1}
+    - _Color1_F: {r: 0.38679248, g: 0.36301115, b: 0.34847814, a: 1}
+    - _Color1_L: {r: 0.227451, g: 0.1764706, b: 0.1764706, a: 1}
+    - _Color1_R: {r: 0.47939658, g: 0.5832161, b: 0.5943396, a: 1}
     - _Color1_T: {r: 0.30998576, g: 0.509434, b: 0.38669664, a: 1}
     - _Color2_B: {r: 1, g: 1, b: 1, a: 1}
     - _Color2_D: {r: 1, g: 1, b: 1, a: 1}
