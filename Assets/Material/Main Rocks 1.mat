@@ -30,11 +30,12 @@ Material:
   - _LMAPENABLE_ON
   - _MODE_OPAQUE
   - _SHADING_B_VERTEX_COLOR
-  - _SHADING_D_VERTEX_COLOR
+  - _SHADING_D_SOLID_COLOR
   - _SHADING_F_SOLIDCOLOR
   - _SHADING_L_VERTEX_COLOR
   - _SHADING_R_SOLID_COLOR
   - _SHADING_T_SOLID_COLOR
+  - _SHOWBOTTOM_ON
   - _SHOWCUSTOMSHADING_ON
   - _SHOWFRONT_ON
   - _SHOWLMAP_ON
@@ -188,7 +189,7 @@ Material:
     - _Color1_F: {r: 0.36078432, g: 0.21960784, b: 0.13333334, a: 1}
     - _Color1_L: {r: 1, g: 1, b: 1, a: 1}
     - _Color1_R: {r: 0.5566038, g: 0.5244083, b: 0.4016999, a: 1}
-    - _Color1_T: {r: 0.9647059, g: 0.96862745, b: 0.67058825, a: 1}
+    - _Color1_T: {r: 0.8270456, g: 0.8301887, b: 0.59131366, a: 1}
     - _Color2_B: {r: 1, g: 1, b: 1, a: 1}
     - _Color2_D: {r: 1, g: 1, b: 1, a: 1}
     - _Color2_F: {r: 1, g: 1, b: 1, a: 1}
