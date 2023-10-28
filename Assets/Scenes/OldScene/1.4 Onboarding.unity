@@ -2165,7 +2165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   head: {fileID: 0}
   EndSpot: {fileID: 0}
-  scenename: 3.1
 --- !u!54 &1477342916
 Rigidbody:
   m_ObjectHideFlags: 0

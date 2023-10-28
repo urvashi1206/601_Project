@@ -11,7 +11,6 @@ public class CharacterMovement : MonoBehaviour
     float timer = 0;
     public GameObject head;
     public GameObject EndSpot;
-    public string scenename;
     void Start()
     {
         head = GameObject.Find("head");
@@ -54,13 +53,4 @@ public class CharacterMovement : MonoBehaviour
             timer = 0;
         }
     }
-
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name == "endpoint") 
-        {
-            Debug.Log(scenename);
-            SceneManager.LoadScene(scenename);
-        }
-    }    
 }

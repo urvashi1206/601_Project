@@ -1621,7 +1621,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   head: {fileID: 0}
   EndSpot: {fileID: 0}
-  scenename: 1.3 Onboarding
 --- !u!54 &1066082342
 Rigidbody:
   m_ObjectHideFlags: 0
