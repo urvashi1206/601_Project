@@ -4552,7 +4552,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   head: {fileID: 0}
   EndSpot: {fileID: 0}
-  scenename: 1.2 Onboarding
 --- !u!54 &839272245
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17097,6 +17096,7 @@ GameObject:
   - component: {fileID: 2028628424020648618}
   - component: {fileID: 735365002058629048}
   - component: {fileID: 7359942445874877114}
+  - component: {fileID: 7359942445874877115}
   m_Layer: 0
   m_Name: endpoint
   m_TagString: Untagged
@@ -17252,6 +17252,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7359942445874877115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7184596732938058179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 288b6e7038f81604bbbb1a5304a1909d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenename: test 1.1
 --- !u!23 &7852156284381885603
 MeshRenderer:
   m_ObjectHideFlags: 0

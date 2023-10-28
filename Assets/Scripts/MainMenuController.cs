@@ -28,7 +28,7 @@ public class MainMenuController : MonoBehaviour
 
     void PlayButtonClicked()
     {
-        SceneManager.LoadScene("1.1 Onboarding");
+        SceneManager.LoadScene("NarrativeStart");
     }
 
     void QuitButtonClicked()
