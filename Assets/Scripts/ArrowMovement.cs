@@ -57,21 +57,6 @@ public class ArrowMovement : MonoBehaviour
                     {
                         if (gameObject.CompareTag("X"))
                         {
-                            /*
-                            if (coroutineIsFinished)
-                            {
-                                StartCoroutine("DisableXButtonsBoxCollider");
-                                StartCoroutine("DisableYButtonsBoxCollider");
-                                StartCoroutine("DisableZButtonsBoxCollider");
-                            }
-                            else
-                            {
-                                //If the coroutine is still going on we stop it
-                                StopCoroutine("DisableXButtonsBoxCollider");
-                                StopCoroutine("DisableYButtonsBoxCollider");
-                                StopCoroutine("DisableZButtonsBoxCollider");
-                            }
-                            */
                             //lock button
                             foreach(ArrowMovement xyzobject in xyzObjects)
                             {
@@ -90,21 +75,6 @@ public class ArrowMovement : MonoBehaviour
                         }
                         else if (gameObject.CompareTag("Y"))
                         {
-                            /*
-                            if (coroutineIsFinished)
-                            {
-                                StartCoroutine("DisableXButtonsBoxCollider");
-                                StartCoroutine("DisableYButtonsBoxCollider");
-                                StartCoroutine("DisableZButtonsBoxCollider");
-                            }
-                            else
-                            {
-                                //If the coroutine is still going on we stop it
-                                StopCoroutine("DisableXButtonsBoxCollider");
-                                StopCoroutine("DisableYButtonsBoxCollider");
-                                StopCoroutine("DisableZButtonsBoxCollider");
-                            }
-                            */
                             foreach (ArrowMovement xyzobject in xyzObjects)
                             {
                                 xyzobject.GetComponent<BoxCollider>().enabled = false;
@@ -117,21 +87,6 @@ public class ArrowMovement : MonoBehaviour
                         }
                         else if (gameObject.CompareTag("Z"))
                         {
-                            /*
-                            if (coroutineIsFinished)
-                            {
-                                StartCoroutine("DisableXButtonsBoxCollider");
-                                StartCoroutine("DisableYButtonsBoxCollider");
-                                StartCoroutine("DisableZButtonsBoxCollider");
-                            }
-                            else
-                            {
-                                //If the coroutine is still going on we stop it
-                                StopCoroutine("DisableXButtonsBoxCollider");
-                                StopCoroutine("DisableYButtonsBoxCollider");
-                                StopCoroutine("DisableZButtonsBoxCollider");
-                            }
-                            */
                             foreach (ArrowMovement xyzobject in xyzObjects)
                             {
                                 xyzobject.GetComponent<BoxCollider>().enabled = false;
@@ -168,65 +123,5 @@ public class ArrowMovement : MonoBehaviour
                 scene.transform.rotation = Quaternion.Euler(rx * Time.deltaTime, ry * Time.deltaTime, rz * Time.deltaTime) * scene.transform.rotation;
             }
         }
-    }
-
-    private IEnumerator DisableXButtonsBoxCollider()
-    {
-        coroutineIsFinished = false;
-        GameObject[] xObjects = GameObject.FindGameObjectsWithTag("X");
-        foreach (GameObject xObject in xObjects)
-        {
-            //Debug.Log("False");
-            xObject.GetComponent<BoxCollider>().enabled = false;
-        }
-
-        yield return new WaitForSeconds(4.0f);
-
-        foreach (GameObject xObject in xObjects)
-        {
-            //Debug.Log("True");
-            xObject.GetComponent<BoxCollider>().enabled = true;
-        }
-        coroutineIsFinished = true;
-    }
-
-    private IEnumerator DisableYButtonsBoxCollider()
-    {
-        coroutineIsFinished = false;
-        GameObject[] yObjects = GameObject.FindGameObjectsWithTag("Y");
-        foreach (GameObject yObject in yObjects)
-        {
-            //Debug.Log("False");
-            yObject.GetComponent<BoxCollider>().enabled = false;
-        }
-
-        yield return new WaitForSeconds(4.0f);
-
-        foreach (GameObject yObject in yObjects)
-        {
-            //Debug.Log("True");
-            yObject.GetComponent<BoxCollider>().enabled = true;
-        }
-        coroutineIsFinished = true;
-    }
-
-    private IEnumerator DisableZButtonsBoxCollider()
-    {
-        coroutineIsFinished = false;
-        GameObject[] zObjects = GameObject.FindGameObjectsWithTag("Z");
-        foreach (GameObject zObject in zObjects)
-        {
-            //Debug.Log("False");
-            zObject.GetComponent<BoxCollider>().enabled = false;
-        }
-
-        yield return new WaitForSeconds(4.0f);
-
-        foreach (GameObject zObject in zObjects)
-        {
-            //Debug.Log("True");
-            zObject.GetComponent<BoxCollider>().enabled = true;
-        }
-        coroutineIsFinished = true;
     }
 }
