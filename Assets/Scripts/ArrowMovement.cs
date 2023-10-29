@@ -23,8 +23,10 @@ public class ArrowMovement : MonoBehaviour
     bool onrotation;
     float rx, ry, rz;
     public CharacterMovement character_movement;
+    public ArrowMovement[] xyzObjects;
     Vector3 dir;
     Quaternion r_des;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,7 @@ public class ArrowMovement : MonoBehaviour
         rx = 0; ry = 0; rz = 0;
         r_des = scene.transform.rotation;
         character_movement = GameObject.FindObjectOfType<CharacterMovement>();
+        xyzObjects = GameObject.FindObjectsOfType<ArrowMovement>();
     }
 
     // Update is called once per frame
@@ -54,6 +57,7 @@ public class ArrowMovement : MonoBehaviour
                     {
                         if (gameObject.CompareTag("X"))
                         {
+                            /*
                             if (coroutineIsFinished)
                             {
                                 StartCoroutine("DisableXButtonsBoxCollider");
@@ -66,6 +70,12 @@ public class ArrowMovement : MonoBehaviour
                                 StopCoroutine("DisableXButtonsBoxCollider");
                                 StopCoroutine("DisableYButtonsBoxCollider");
                                 StopCoroutine("DisableZButtonsBoxCollider");
+                            }
+                            */
+                            //lock button
+                            foreach(ArrowMovement xyzobject in xyzObjects)
+                            {
+                                xyzobject.GetComponent<BoxCollider>().enabled = false;
                             }
                             //character facing fall side
                             dir = new Vector3(0, 0, angle);
@@ -80,6 +90,7 @@ public class ArrowMovement : MonoBehaviour
                         }
                         else if (gameObject.CompareTag("Y"))
                         {
+                            /*
                             if (coroutineIsFinished)
                             {
                                 StartCoroutine("DisableXButtonsBoxCollider");
@@ -93,14 +104,20 @@ public class ArrowMovement : MonoBehaviour
                                 StopCoroutine("DisableYButtonsBoxCollider");
                                 StopCoroutine("DisableZButtonsBoxCollider");
                             }
+                            */
+                            foreach (ArrowMovement xyzobject in xyzObjects)
+                            {
+                                xyzobject.GetComponent<BoxCollider>().enabled = false;
+                            }
                             c_rigidbody.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
                             r_des = Quaternion.Euler(0, angle, 0) * scene.transform.rotation;
-                            onrotation = false;
+                            onrotation = true;
                             character_movement.onrotation = true;
                             rx = 0; ry = angle; rz = 0;
                         }
                         else if (gameObject.CompareTag("Z"))
                         {
+                            /*
                             if (coroutineIsFinished)
                             {
                                 StartCoroutine("DisableXButtonsBoxCollider");
@@ -113,6 +130,11 @@ public class ArrowMovement : MonoBehaviour
                                 StopCoroutine("DisableXButtonsBoxCollider");
                                 StopCoroutine("DisableYButtonsBoxCollider");
                                 StopCoroutine("DisableZButtonsBoxCollider");
+                            }
+                            */
+                            foreach (ArrowMovement xyzobject in xyzObjects)
+                            {
+                                xyzobject.GetComponent<BoxCollider>().enabled = false;
                             }
                             //character facing fall side
                             dir = new Vector3(-angle, 0, 0);
