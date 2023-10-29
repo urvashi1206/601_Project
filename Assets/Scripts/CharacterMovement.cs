@@ -11,6 +11,7 @@ public class CharacterMovement : MonoBehaviour
     float timer = 0;
     public GameObject head;
     public GameObject EndSpot;
+    public bool onrotation;
     void Start()
     {
         head = GameObject.Find("head");
@@ -19,12 +20,13 @@ public class CharacterMovement : MonoBehaviour
         Vector3 dir = EndSpot.transform.position;
         transform.LookAt(new Vector3(dir.x, transform.position.y, dir.z));
         head.transform.LookAt(dir);
+        onrotation = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(GetComponent<Rigidbody>().velocity.magnitude < 0.001)
+        if(GetComponent<Rigidbody>().velocity.magnitude < 0.001 && !onrotation)
         {
             timer += Time.deltaTime;
             //UnityEngine.Debug.Log(timer);
