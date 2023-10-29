@@ -12,6 +12,7 @@ public class CharacterMovement : MonoBehaviour
     public GameObject head;
     public GameObject EndSpot;
     public bool onrotation;
+    public ArrowMovement[] xyzObjects;
     void Start()
     {
         head = GameObject.Find("head");
@@ -21,6 +22,7 @@ public class CharacterMovement : MonoBehaviour
         transform.LookAt(new Vector3(dir.x, transform.position.y, dir.z));
         head.transform.LookAt(dir);
         onrotation = false;
+        xyzObjects = GameObject.FindObjectsOfType<ArrowMovement>();
     }
 
     // Update is called once per frame
@@ -51,6 +53,10 @@ public class CharacterMovement : MonoBehaviour
                 head.transform.LookAt(dir);
                 GetComponent<Rigidbody>().isKinematic = false;
                 GetComponent<BoxCollider>().enabled = true;
+            }
+            foreach (ArrowMovement xyzobject in xyzObjects)
+            {
+                xyzobject.GetComponent<BoxCollider>().enabled = true;
             }
             timer = 0;
         }
