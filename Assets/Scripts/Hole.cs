@@ -31,7 +31,7 @@ public class Hole : MonoBehaviour
         }
         else if (timer <= 10)
         {
-            transform.position += new Vector3(18 * Time.deltaTime / 4, 0, 0);
+            transform.position += new Vector3(17.6f * Time.deltaTime / 4, 0, 0);
         }
         else if (timer <= 11)
         {
@@ -39,7 +39,7 @@ public class Hole : MonoBehaviour
         }
         else if (timer <= 17)
         {
-            transform.position += new Vector3(0, 0, -26.6f * Time.deltaTime / 6);
+            transform.position += new Vector3(0, 0, -26.4f * Time.deltaTime / 6);
         }
     }
 
