@@ -11,31 +11,33 @@ public class Hole : MonoBehaviour
     // Start is called before the first frame update
     //private float speed = 8f;
     public ParticleSystem particleSystem;
+    public float timer;
     void Start()
     {
-
+        timer = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time <= 5)
+        timer += Time.deltaTime;
+        if (timer <= 5)
         {
             transform.position += new Vector3(0, 0, -26.4f * Time.deltaTime / 5);
         }
-        else if (Time.time <= 6)
+        else if (timer <= 6)
         {
             transform.rotation = Quaternion.Euler(0, -90 * Time.deltaTime, 0) * transform.rotation;
         }
-        else if (Time.time <= 10)
+        else if (timer <= 10)
         {
             transform.position += new Vector3(18 * Time.deltaTime / 4, 0, 0);
         }
-        else if (Time.time <= 11)
+        else if (timer <= 11)
         {
             transform.rotation = Quaternion.Euler(0, 90 * Time.deltaTime, 0) * transform.rotation;
         }
-        else if (Time.time <= 17)
+        else if (timer <= 17)
         {
             transform.position += new Vector3(0, 0, -26.6f * Time.deltaTime / 6);
         }
