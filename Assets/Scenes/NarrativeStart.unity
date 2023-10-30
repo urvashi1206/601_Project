@@ -33695,7 +33695,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 288b6e7038f81604bbbb1a5304a1909d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenename: test 1.1
+  scenename: World
+  unloadAllOtherScenes: 1
 --- !u!65 &7359942445874877116
 BoxCollider:
   m_ObjectHideFlags: 0
