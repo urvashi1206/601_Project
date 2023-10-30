@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelChange : MonoBehaviour
 {
     public string scenename;
+    public bool unloadAllOtherScenes = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +23,15 @@ public class LevelChange : MonoBehaviour
     {
         if (collision.gameObject.name == "character")
         {
-            //Debug.Log(scenename);
-            SceneManager.LoadScene(scenename);
+            if (unloadAllOtherScenes)
+            {
+                SceneManager.LoadScene(scenename);
+            }
+            else
+            {
+                SceneManager.UnloadSceneAsync(gameObject.scene);
+                SceneManager.LoadScene(scenename, LoadSceneMode.Additive);
+            }
         }
     }
 }
