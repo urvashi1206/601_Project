@@ -9,15 +9,11 @@ using UnityEngine.SceneManagement;
 public class Hole : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float speed = 8f;
-    //public float r_timer; 
-    //private Animator anim;
+    //private float speed = 8f;
+    public ParticleSystem particleSystem;
     void Start()
     {
-        //anim = GetComponent<Animator>();
-        //r_timer = 0;
-        //Debug.Log(transform.position.z);
-        //Debug.Log(Time.time);
+
     }
 
     // Update is called once per frame
@@ -25,29 +21,23 @@ public class Hole : MonoBehaviour
     {
         if (Time.time <= 5)
         {
-            //Debug.Log(transform.position.z);
-            //transform.Translate(Vector3.forward * speed * Time.deltaTime );
             transform.position += new Vector3(0, 0, -26.4f * Time.deltaTime / 5);
         }
         else if (Time.time <= 6)
         {
             transform.rotation = Quaternion.Euler(0, -90 * Time.deltaTime, 0) * transform.rotation;
-            //anim.ResetTrigger("OnReachingPosition");
-            /*else
-            {
-                if (transform.position.z >= -24)
-                {
-                    transform.Translate(Vector3.forward * speed * Time.deltaTime);
-                }
-                else
-                {
-                    transform.Translate(Vector3.forward * 0 * Time.deltaTime);
-                }
-            }*/
         }
-        else if(Time.time <= 10) 
+        else if (Time.time <= 10)
         {
-            transform.position += new Vector3(15 * Time.deltaTime / 4, 0, 0);
+            transform.position += new Vector3(18 * Time.deltaTime / 4, 0, 0);
+        }
+        else if (Time.time <= 11)
+        {
+            transform.rotation = Quaternion.Euler(0, 90 * Time.deltaTime, 0) * transform.rotation;
+        }
+        else if (Time.time <= 17)
+        {
+            transform.position += new Vector3(0, 0, -26.6f * Time.deltaTime / 6);
         }
     }
 
@@ -55,6 +45,7 @@ public class Hole : MonoBehaviour
     {
         if (collision.gameObject.name == "PlanetoTouch")
         {
+            particleSystem.Play();
             GameObject.Find("RocksAboveTheHole").GetComponent<Rigidbody>().useGravity = true;
             Destroy(collision.gameObject);
         }
