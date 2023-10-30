@@ -16,7 +16,6 @@ public class ArrowMovement : MonoBehaviour
 
     private Ray _ray;
     private RaycastHit _hit;
-    private bool coroutineIsFinished = true;
     public GameObject character;
     public GameObject character_head;
     public Rigidbody c_rigidbody;
