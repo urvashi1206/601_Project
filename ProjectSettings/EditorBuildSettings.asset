@@ -12,8 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/NarrativeStart.unity
     guid: 34cd46df6ab178c418c0c72d3fb2ad9a
   - enabled: 1
+    path: Assets/Scenes/World.unity
+    guid: 0fe5926ccd5d381438a7faeb91edf5db
+  - enabled: 1
     path: Assets/Scenes/test 1.1.unity
-    guid: cfd28a2d2d9422945b63ef932529e293
+    guid: 7dea9d5248ce995419a05e69fca79df0
   - enabled: 1
     path: Assets/Scenes/test 1.2.unity
     guid: a12b2347c8885c74f8ad7fcdd4d06e59
@@ -23,7 +26,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/test 1.4.unity
     guid: 2acb5b4376f2a4f4d9aceb4db5949657
-  - enabled: 1
-    path: Assets/Scenes/World.unity
-    guid: 0fe5926ccd5d381438a7faeb91edf5db
   m_configObjects: {}
