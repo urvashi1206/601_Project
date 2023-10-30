@@ -389,6 +389,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 838290902}
+    - target: {fileID: 888940263141745068, guid: f0a91a03c091ce74f92de54a1d362e1b, type: 3}
+      propertyPath: m_text
+      value: NewGame
+      objectReference: {fileID: 0}
     - target: {fileID: 3168316082433839923, guid: f0a91a03c091ce74f92de54a1d362e1b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
