@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DarkGreen
+  m_Name: DarkGreen 1
   m_Shader: {fileID: 4800000, guid: 7f50d1ec77e2cc9459ca9d36924ffc53, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -187,12 +187,12 @@ Material:
     - _AOColor: {r: 1, g: 1, b: 1, a: 1}
     - _AmbientColor: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1_B: {r: 0.5943396, g: 0.46257564, b: 0.5066907, a: 1}
-    - _Color1_D: {r: 0.33333334, g: 0.34509805, b: 0.37647063, a: 1}
-    - _Color1_F: {r: 0.5849056, g: 0.41108933, b: 0.5561541, a: 1}
-    - _Color1_L: {r: 0.41509432, g: 0.3504806, b: 0.41294053, a: 1}
-    - _Color1_R: {r: 0.59607846, g: 0.46274513, b: 0.5058824, a: 1}
-    - _Color1_T: {r: 0.57057655, g: 0.5379584, b: 0.7264151, a: 1}
+    - _Color1_B: {r: 0.9294118, g: 0.9294118, b: 0.69411767, a: 1}
+    - _Color1_D: {r: 0.9294118, g: 0.9294118, b: 0.69411767, a: 1}
+    - _Color1_F: {r: 0.9294118, g: 0.9294118, b: 0.69411767, a: 1}
+    - _Color1_L: {r: 0.9294118, g: 0.9294118, b: 0.69411767, a: 1}
+    - _Color1_R: {r: 0.92941177, g: 0.92941177, b: 0.69411767, a: 1}
+    - _Color1_T: {r: 0.54901963, g: 0.54901963, b: 0.3921569, a: 1}
     - _Color2_B: {r: 1, g: 1, b: 1, a: 1}
     - _Color2_D: {r: 1, g: 1, b: 1, a: 1}
     - _Color2_F: {r: 0.18039216, g: 0.49411768, b: 0.7568628, a: 1}
