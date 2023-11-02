@@ -21,25 +21,25 @@ public class Hole : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer <= 5)
+        if (timer <= 7)
         {
-            transform.position += new Vector3(0, 0, -26.4f * Time.deltaTime / 5);
+            transform.position += new Vector3(0, 0, -26.4f * Time.deltaTime / 7);
         }
-        else if (timer <= 6)
+        else if (timer <= 8)
         {
             transform.rotation = Quaternion.Euler(0, -90 * Time.deltaTime, 0) * transform.rotation;
         }
-        else if (timer <= 10)
+        else if (timer <= 15)
         {
-            transform.position += new Vector3(17.6f * Time.deltaTime / 4, 0, 0);
+            transform.position += new Vector3(17.6f * Time.deltaTime / 7, 0, 0);
         }
-        else if (timer <= 11)
+        else if (timer <= 16)
         {
             transform.rotation = Quaternion.Euler(0, 90 * Time.deltaTime, 0) * transform.rotation;
         }
-        else if (timer <= 17)
+        else if (timer <= 23)
         {
-            transform.position += new Vector3(0, 0, -26.4f * Time.deltaTime / 6);
+            transform.position += new Vector3(0, 0, -26.4f * Time.deltaTime / 7);
         }
     }
 

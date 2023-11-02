@@ -1307,13 +1307,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.9330127, y: -0.066987306, z: 0.24999997, w: 0.25000006}
+  m_LocalRotation: {x: 0.9659016, y: -0.0018236494, z: 0.0068055536, w: 0.25881344}
   m_LocalPosition: {x: -0.4, y: 23.5, z: 0.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 150, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 150, y: -0.80700684, z: 0}
 --- !u!4 &767715396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 579608857549862640, guid: 3b424dcaf97df3d4dbc57da54ab04fe9, type: 3}
@@ -1764,6 +1764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenename: test 1.4
+  unloadAllOtherScenes: 0
 --- !u!4 &1146770159 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4869467356263481718, guid: 6506a24258fb4c44983bd31b35081b25, type: 3}
