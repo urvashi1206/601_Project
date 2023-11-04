@@ -32,9 +32,10 @@ Material:
   - _SHADING_B_VERTEX_COLOR
   - _SHADING_D_VERTEX_COLOR
   - _SHADING_F_SOLIDCOLOR
-  - _SHADING_L_VERTEX_COLOR
+  - _SHADING_L_SOLID_COLOR
   - _SHADING_R_SOLID_COLOR
   - _SHADING_T_SOLID_COLOR
+  - _SHOWBOTTOM_ON
   - _SHOWCUSTOMSHADING_ON
   - _SHOWFRONT_ON
   - _SHOWLEFT_ON
@@ -46,7 +47,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties: _Color1_R
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -161,7 +162,7 @@ Material:
     - _ShowAO: 0
     - _ShowAmbientSettings: 0
     - _ShowBack: 0
-    - _ShowBottom: 0
+    - _ShowBottom: 1
     - _ShowColorCorrection: 0
     - _ShowCustomShading: 1
     - _ShowFog: 0
@@ -185,10 +186,10 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color1_B: {r: 1, g: 1, b: 1, a: 1}
     - _Color1_D: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1_F: {r: 0.69803923, g: 0.77647066, b: 0.8588236, a: 1}
-    - _Color1_L: {r: 0.227451, g: 0.3529412, b: 0.7568628, a: 1}
-    - _Color1_R: {r: 0.227451, g: 0.3529412, b: 0.7568628, a: 1}
-    - _Color1_T: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
+    - _Color1_F: {r: 0.38297415, g: 0.372864, b: 0.5377358, a: 1}
+    - _Color1_L: {r: 0.5843719, g: 0.51548594, b: 0.6037736, a: 1}
+    - _Color1_R: {r: 0.38431376, g: 0.37254903, b: 0.5372549, a: 1}
+    - _Color1_T: {r: 0.47403336, g: 0.4033019, b: 0.5, a: 1}
     - _Color2_B: {r: 1, g: 1, b: 1, a: 1}
     - _Color2_D: {r: 1, g: 1, b: 1, a: 1}
     - _Color2_F: {r: 0.18039216, g: 0.49411768, b: 0.7568628, a: 1}
