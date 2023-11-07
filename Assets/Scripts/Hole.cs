@@ -11,7 +11,7 @@ public class Hole : MonoBehaviour
     // Start is called before the first frame update
     //private float speed = 8f;
     public ParticleSystem particleSystem;
-    public float timer;
+    private float timer;
     void Start()
     {
         timer = 0;
@@ -37,7 +37,7 @@ public class Hole : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 90 * Time.deltaTime, 0) * transform.rotation;
         }
-        else if (timer <= 23)
+        else if (timer <= 17)
         {
             transform.position += new Vector3(0, 0, -26.4f * Time.deltaTime / 7);
         }
