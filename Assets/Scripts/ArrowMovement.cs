@@ -25,6 +25,7 @@ public class ArrowMovement : MonoBehaviour
     public ArrowMovement[] xyzObjects;
     Vector3 dir;
     Quaternion r_des;
+    //private float rotationSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +68,7 @@ public class ArrowMovement : MonoBehaviour
                             character_head.transform.LookAt(character_head.transform.position + dir);
                             c_rigidbody.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
                             //level rotation
+                            //rotationSpeed = 0.5f;
                             r_des = Quaternion.Euler(angle, 0, 0) * scene.transform.rotation;
                             onrotation = true;
                             character_movement.onrotation = true;
@@ -78,6 +80,7 @@ public class ArrowMovement : MonoBehaviour
                             {
                                 xyzobject.GetComponent<BoxCollider>().enabled = false;
                             }
+                            //rotationSpeed = 1.0f;
                             c_rigidbody.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
                             r_des = Quaternion.Euler(0, angle, 0) * scene.transform.rotation;
                             onrotation = true;
@@ -96,6 +99,7 @@ public class ArrowMovement : MonoBehaviour
                             character_head.transform.LookAt(character_head.transform.position + dir);
                             c_rigidbody.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
                             //level rotation
+                            //rotationSpeed = 0.5f;
                             r_des = Quaternion.Euler(0, 0, angle) * scene.transform.rotation;
                             onrotation = true;
                             character_movement.onrotation = true;
