@@ -19,7 +19,7 @@ public class ArrowMovement : MonoBehaviour
     public GameObject character;
     public GameObject character_head;
     public Rigidbody c_rigidbody;
-    bool onrotation;
+    bool onrotation_xz, onrotation_y;
     float rx, ry, rz;
     public CharacterMovement character_movement;
     public ArrowMovement[] xyzObjects;
@@ -35,7 +35,8 @@ public class ArrowMovement : MonoBehaviour
         character_head = GameObject.Find("head");
         c_rigidbody = character.GetComponent<Rigidbody>();
         r_timer = 0;
-        onrotation = false;
+        onrotation_xz = false;
+        onrotation_y = false;
         rx = 0; ry = 0; rz = 0;
         r_des = scene.transform.rotation;
         character_movement = GameObject.FindObjectOfType<CharacterMovement>();
@@ -45,7 +46,7 @@ public class ArrowMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!onrotation)
+        if (!onrotation_xz && !onrotation_y)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -70,7 +71,7 @@ public class ArrowMovement : MonoBehaviour
                             //level rotation
                             //rotationSpeed = 0.5f;
                             r_des = Quaternion.Euler(angle, 0, 0) * scene.transform.rotation;
-                            onrotation = true;
+                            onrotation_xz = true;
                             character_movement.onrotation = true;
                             rx = angle; ry = 0; rz = 0;
                         }
@@ -83,7 +84,7 @@ public class ArrowMovement : MonoBehaviour
                             //rotationSpeed = 1.0f;
                             c_rigidbody.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
                             r_des = Quaternion.Euler(0, angle, 0) * scene.transform.rotation;
-                            onrotation = true;
+                            onrotation_y = true;
                             character_movement.onrotation = true;
                             rx = 0; ry = angle; rz = 0;
                         }
@@ -101,7 +102,7 @@ public class ArrowMovement : MonoBehaviour
                             //level rotation
                             //rotationSpeed = 0.5f;
                             r_des = Quaternion.Euler(0, 0, angle) * scene.transform.rotation;
-                            onrotation = true;
+                            onrotation_xz = true;
                             character_movement.onrotation = true;
                             rx = 0; ry = 0; rz = angle;
                         }
@@ -109,12 +110,12 @@ public class ArrowMovement : MonoBehaviour
                 }
             }
         }
-        else
+        else if(onrotation_xz)
         {
             if(r_timer > 1)
             {
                 r_timer = 0;
-                onrotation = false;
+                onrotation_xz = false;
                 character_movement.onrotation = false;
                 scene.transform.rotation = r_des;
                 c_rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
@@ -124,6 +125,23 @@ public class ArrowMovement : MonoBehaviour
             {
                 r_timer += Time.deltaTime;
                 scene.transform.rotation = Quaternion.Euler(rx * Time.deltaTime, ry * Time.deltaTime, rz * Time.deltaTime) * scene.transform.rotation;
+            }
+        }
+        else
+        {
+            if (r_timer > 0.5)
+            {
+                r_timer = 0;
+                onrotation_y = false;
+                character_movement.onrotation = false;
+                scene.transform.rotation = r_des;
+                c_rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+                c_rigidbody.velocity = Vector3.zero;
+            }
+            else
+            {
+                r_timer += Time.deltaTime;
+                scene.transform.rotation = Quaternion.Euler(rx * Time.deltaTime / 0.5f, ry * Time.deltaTime / 0.5f, rz * Time.deltaTime / 0.5f) * scene.transform.rotation;
             }
         }
     }
