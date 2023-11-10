@@ -112,7 +112,7 @@ public class ArrowMovement : MonoBehaviour
         }
         else if(onrotation_xz)
         {
-            if(r_timer > 1)
+            if(r_timer > (1/0.7))
             {
                 r_timer = 0;
                 onrotation_xz = false;
@@ -124,7 +124,7 @@ public class ArrowMovement : MonoBehaviour
             else
             {
                 r_timer += Time.deltaTime;
-                scene.transform.rotation = Quaternion.Euler(rx * Time.deltaTime, ry * Time.deltaTime, rz * Time.deltaTime) * scene.transform.rotation;
+                scene.transform.rotation = Quaternion.Euler(rx * Time.deltaTime * 0.7f, ry * Time.deltaTime * 0.7f, rz * Time.deltaTime * 0.7f) * scene.transform.rotation;
             }
         }
         else
