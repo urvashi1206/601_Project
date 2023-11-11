@@ -44,6 +44,18 @@ public class CharacterMovement : MonoBehaviour
         head.transform.LookAt(dir);
         onrotation = false;
         xyzObjects = GameObject.FindObjectsOfType<ArrowMovement>();
+
+        QueueDialogue("", 1f);
+        QueueDialogue("Where the frick I am ?", 2f);
+        QueueDialogue("I-I can¡¯t move! ", 1f);
+        QueueDialogue("The air itself is like tar...", 2f);
+        QueueDialogue("", 3f);
+        QueueDialogue("Wait... what¡¯s this? It¡¯s beautiful...", 4f);
+        QueueDialogue("", 5f);
+        QueueDialogue("Whoa! This sensation...", 2f);
+        QueueDialogue("Let me try something...", 4f);
+        QueueDialogue("", 4f);
+  
     }
 
     // Update is called once per frame
