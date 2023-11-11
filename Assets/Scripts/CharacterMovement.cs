@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.TextCore.Text;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -13,10 +11,31 @@ public class CharacterMovement : MonoBehaviour
     public GameObject EndSpot;
     public bool onrotation;
     public ArrowMovement[] xyzObjects;
+    public GameObject playerUI;
+
+    GameObject uiSpeechBubble;
+
+    // dialogue system
+    struct Dialogue
+    {
+        public string message;
+        public float duration;
+
+        public Dialogue(string message, float duration)
+        {
+            this.message = message;
+            this.duration = duration;
+        }
+    }
+    Queue<Dialogue> dialogueQ = new();
+    float dialogueTimer = 0f;
+
     void Start()
     {
         head = GameObject.Find("head");
         EndSpot = GameObject.Find("EndingSpot");
+        uiSpeechBubble = playerUI.transform.Find("SpeechBubble").gameObject;
+
         //character facing endpoint
         Vector3 dir = EndSpot.transform.position;
         transform.LookAt(new Vector3(dir.x, transform.position.y, dir.z));
@@ -60,5 +79,32 @@ public class CharacterMovement : MonoBehaviour
             }
             timer = 0;
         }
+
+        // Dialogue timer handling
+        dialogueTimer -= Time.deltaTime;
+
+        if (dialogueTimer <= 0f)
+        {
+            if (dialogueQ.TryDequeue(out Dialogue newDialogue))
+            {
+                dialogueTimer = newDialogue.duration;
+
+                uiSpeechBubble.SetActive(newDialogue.message.Length > 0);
+                uiSpeechBubble.GetComponentInChildren<TextMeshProUGUI>().SetText(newDialogue.message);
+            }
+            else
+            {
+                uiSpeechBubble.SetActive(false);
+            }
+        }
+        else // udpate speech bubble location as character moves around
+        {
+            uiSpeechBubble.transform.position = Camera.main.WorldToScreenPoint(transform.position);
+        }
+    }
+
+    public void QueueDialogue(string message, float duration)
+    {
+        dialogueQ.Enqueue(new Dialogue(message, duration));
     }
 }
