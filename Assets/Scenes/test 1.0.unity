@@ -135,17 +135,13 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: f9a175a413298564887b7b68d51f9fe7, type: 2}
-    - target: {fileID: 2265144225318300283, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903694968367559507, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3165737155841128150, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
       propertyPath: m_Name
       value: character
+      objectReference: {fileID: 0}
+    - target: {fileID: 6483219226356763098, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
+      propertyPath: head
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6525151322242249255, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
       propertyPath: m_AngularDrag
@@ -212,11 +208,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
---- !u!1 &8648407 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6819154795661817605, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
-  m_PrefabInstance: {fileID: 8648406}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8648408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7973017875951988991, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
@@ -6006,7 +5997,7 @@ PrefabInstance:
     - target: {fileID: 3679597933139318830, guid: f928a5a7afb98684ea18b14781f75296, type: 3}
       propertyPath: character_head
       value: 
-      objectReference: {fileID: 8648407}
+      objectReference: {fileID: 0}
     - target: {fileID: 8466962257522599818, guid: f928a5a7afb98684ea18b14781f75296, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.7
@@ -6656,7 +6647,7 @@ PrefabInstance:
     - target: {fileID: 4813930890819592793, guid: eb615cb9ad688de49948b2a87393f7d7, type: 3}
       propertyPath: character_head
       value: 
-      objectReference: {fileID: 8648407}
+      objectReference: {fileID: 0}
     - target: {fileID: 4869467356263481718, guid: eb615cb9ad688de49948b2a87393f7d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -121.63916
