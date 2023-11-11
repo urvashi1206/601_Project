@@ -15,6 +15,8 @@ public class CharacterMovement : MonoBehaviour
 
     GameObject uiSpeechBubble;
 
+    static CharacterMovement playerScript; // singleton
+
     // dialogue system
     struct Dialogue
     {
@@ -106,5 +108,14 @@ public class CharacterMovement : MonoBehaviour
     public void QueueDialogue(string message, float duration)
     {
         dialogueQ.Enqueue(new Dialogue(message, duration));
+    }
+
+    public static CharacterMovement Get()
+    {
+        if (playerScript == null)
+        {
+            playerScript = GameObject.FindWithTag("Player").GetComponent<CharacterMovement>();
+        }
+        return playerScript;
     }
 }
