@@ -88,7 +88,8 @@ public class CharacterMovement : MonoBehaviour
             if (dialogueQ.TryDequeue(out Dialogue newDialogue))
             {
                 dialogueTimer = newDialogue.duration;
-                uiSpeechBubble.SetActive(true);
+
+                uiSpeechBubble.SetActive(newDialogue.message.Length > 0);
                 uiSpeechBubble.GetComponentInChildren<TextMeshProUGUI>().SetText(newDialogue.message);
             }
             else
