@@ -11,6 +11,7 @@ public class Hole : MonoBehaviour
     // Start is called before the first frame update
     //private float speed = 8f;
     public ParticleSystem particleSystem;
+    public Animator anim;
     private float timer;
     void Start()
     {
@@ -50,6 +51,7 @@ public class Hole : MonoBehaviour
             particleSystem.Play();
             GameObject.Find("RocksAboveTheHole").GetComponent<Rigidbody>().useGravity = true;
             Destroy(collision.gameObject);
+            anim.SetTrigger("FadeOut");
         }
     }
 }
