@@ -42,8 +42,6 @@ public class CharacterMovement : MonoBehaviour
         head.transform.LookAt(dir);
         onrotation = false;
         xyzObjects = GameObject.FindObjectsOfType<ArrowMovement>();
-
-        QueueDialogue("asd", 5f);
     }
 
     // Update is called once per frame

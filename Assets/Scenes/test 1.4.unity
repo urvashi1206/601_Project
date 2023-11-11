@@ -1557,6 +1557,10 @@ PrefabInstance:
       propertyPath: scenename
       value: MainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 7533378218399991600, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+      propertyPath: unloadAllOtherScenes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7560372558153347935, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
       propertyPath: m_Layer
       value: 3
