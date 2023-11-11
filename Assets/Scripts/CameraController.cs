@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
-    public GameObject characterObj;
+    GameObject characterObj;
 
     private List<GameObject> hitObjs;
 
@@ -14,6 +15,13 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         hitObjs = new();
+        SceneManager.sceneLoaded += OnLevelLoaded;
+        enabled = false; // don't update until level is loaded
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnLevelLoaded;
     }
 
     // Update is called once per frame
@@ -40,13 +48,18 @@ public class CameraController : MonoBehaviour
                 }
             }
         }
-        
-        
 
         // All remaining objs in list were not hit; set them back to opaque material
         foreach (GameObject obj in hitObjs)
             obj.GetComponent<GridComponent>().SetFade(1f);
 
         hitObjs = objsThisFrame;
+    }
+
+    void OnLevelLoaded(Scene scene, LoadSceneMode mode)
+    {
+        hitObjs.Clear();
+        characterObj = GameObject.FindWithTag("Player");
+        enabled = true;
     }
 }
