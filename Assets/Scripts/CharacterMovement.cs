@@ -39,14 +39,16 @@ public class CharacterMovement : MonoBehaviour
         uiSpeechBubble = playerUI.transform.Find("SpeechBubble").gameObject;
 
         //character facing endpoint
+        look_at_endpoint();
+        onrotation = false;
+        xyzObjects = GameObject.FindObjectsOfType<ArrowMovement>();
+    }
+
+    public void look_at_endpoint()
+    {
         Vector3 dir = EndSpot.transform.position;
         transform.LookAt(new Vector3(dir.x, transform.position.y, dir.z));
         head.transform.LookAt(dir);
-        onrotation = false;
-        xyzObjects = GameObject.FindObjectsOfType<ArrowMovement>();
-
-
-  
     }
 
     // Update is called once per frame
