@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8911478317916177758}
   - component: {fileID: 8440932114237808312}
   - component: {fileID: 6978647383867563907}
+  - component: {fileID: 8774005470448433858}
   m_Layer: 0
   m_Name: PositiveY
   m_TagString: Y
@@ -126,3 +127,17 @@ MonoBehaviour:
   c_rigidbody: {fileID: 0}
   character_movement: {fileID: 0}
   xyzObjects: []
+--- !u!114 &8774005470448433858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6965681179929535627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0adfde294f9214c9264cc6cc4f57cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0}
+  hoverColor: {r: 1, g: 1, b: 1, a: 0}
