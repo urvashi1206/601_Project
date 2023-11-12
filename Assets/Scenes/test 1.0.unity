@@ -131,37 +131,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 900656580}
     m_Modifications:
-    - target: {fileID: 1804042011301744889, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
-      propertyPath: m_Material
+    - target: {fileID: 2480055682555006242, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
+      propertyPath: scene
       value: 
-      objectReference: {fileID: 13400000, guid: f9a175a413298564887b7b68d51f9fe7, type: 2}
+      objectReference: {fileID: 900656579}
     - target: {fileID: 3165737155841128150, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
       propertyPath: m_Name
       value: character
-      objectReference: {fileID: 0}
-    - target: {fileID: 6483219226356763098, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
-      propertyPath: head
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6525151322242249255, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6525151322242249255, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 7973017875951988991, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7973017875951988991, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7973017875951988991, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7973017875951988991, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
       propertyPath: m_LocalPosition.x
