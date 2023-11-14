@@ -18,10 +18,10 @@ public class Dialogue : MonoBehaviour
             CM.QueueDialogue("", 1f);
 
             CM.QueueDialogue("Where the frick I am ?", 2f);
-            CM.QueueDialogue("I-I can¡¯t move! ", 1f);
+            CM.QueueDialogue("I-I can't move! ", 1f);
             CM.QueueDialogue("The air itself is like tar...", 2f);
             CM.QueueDialogue("", 3f);
-            CM.QueueDialogue("Wait... what¡¯s this? It¡¯s beautiful...", 4f);
+            CM.QueueDialogue("Wait... what's this? It's beautiful...", 4f);
             CM.QueueDialogue("", 5f);
             CM.QueueDialogue("Whoa! This sensation...", 2f);
             CM.QueueDialogue("Let me try something...", 4f);
@@ -34,8 +34,8 @@ public class Dialogue : MonoBehaviour
             {
                 CM.QueueDialogue("", 1f);
 
-                CM.QueueDialogue("This power¡­ I can rotate these rooms!", 2f);
-                CM.QueueDialogue("Let¡¯s explore these rooms with this power...", 2f);
+                CM.QueueDialogue("This power... I can rotate these rooms!", 2f);
+                CM.QueueDialogue("Let's explore these rooms with this power...", 2f);
                 CM.QueueDialogue("Perhaps I can escape.", 1f);
             }
 
