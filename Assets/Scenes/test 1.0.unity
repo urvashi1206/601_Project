@@ -7684,13 +7684,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4219890837244213680, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+      propertyPath: unloadAllOtherScenes
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5588980631725028432, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
       propertyPath: m_Name
       value: EndingSpot
       objectReference: {fileID: 0}
-    - target: {fileID: 7533378218399991600, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
-      propertyPath: scenename
-      value: test 1.1
+    - target: {fileID: 9136787908159988706, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.41
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
