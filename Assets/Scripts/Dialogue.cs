@@ -8,46 +8,47 @@ public class Dialogue : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public CharacterMovement CM;
     public string Level;
+    public GameObject weirdDevice;
+    public GameObject firstArrowControl;
 
     void Start()
     {
+        CharacterMovement CM = CharacterMovement.Get();
+
         if (Level == "test 1.0")
         {
-            CM.QueueDialogue("", 1f);
+            CM.QueueDialoguePause(1f);
 
-            CM.QueueDialogue("Where the frick I am ?", 2f);
-            CM.QueueDialogue("I-I can't move! ", 1f);
-            CM.QueueDialogue("The air itself is like tar...", 2f);
-            CM.QueueDialogue("", 3f);
-            CM.QueueDialogue("Wait... what's this? It's beautiful...", 4f);
-            CM.QueueDialogue("", 5f);
-            CM.QueueDialogue("Whoa! This sensation...", 2f);
-            CM.QueueDialogue("Let me try something...", 4f);
-            CM.QueueDialogue("", 4f);
-            CM.QueueDialogue("Whoa!!!", 1f);
+            CM.QueueDialogue("Ouch, that was quite the fall... Where am I?");
+            CM.QueueDialogue("I-I can't move! ");
+            CM.QueueDialogue("The air itself is like tar...");
+            CM.QueueDialoguePause(2f);
+            CM.QueueDialogue("Wait... what's this? It's beautiful...");
+
+            // Direct player's attention toward the device
+            CM.QueueDialoguePause(5f, () => CM.EnableVisualFocus(
+                Camera.main.WorldToScreenPoint(weirdDevice.transform.position)));
+
+            CM.QueueDialogue("Whoa! This sensation...", () => CM.DisableVisualFocus());
+            CM.QueueDialogue("Let me try something...");
+
+            // Direct the player's attention toward the arrow control
+            CM.QueueDialoguePause(4f, () => CM.EnableVisualFocus(
+                Camera.main.WorldToScreenPoint(firstArrowControl.transform.position)));
+
+            CM.QueueDialogue("Whoa!!!", () => CM.DisableVisualFocus());
         }
         else
         {
             if(Level == "test 1.1")
             {
-                CM.QueueDialogue("", 1f);
+                CM.QueueDialoguePause(1f);
 
-                CM.QueueDialogue("This power... I can rotate these rooms!", 2f);
-                CM.QueueDialogue("Let's explore these rooms with this power...", 2f);
-                CM.QueueDialogue("Perhaps I can escape.", 1f);
+                CM.QueueDialogue("This power... I can rotate these rooms!");
+                CM.QueueDialogue("Let's explore these rooms with this power...");
+                CM.QueueDialogue("Perhaps I can escape.");
             }
-
         }
-
-       
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
