@@ -2715,6 +2715,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 656538465}
     m_Modifications:
+    - target: {fileID: 618009741668613387, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335663422444237845, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050262771904833610, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073355965516545871, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688016437243490437, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3181692491985073000, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
@@ -2759,6 +2779,18 @@ PrefabInstance:
       propertyPath: scenename
       value: test 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 4683210057296413202, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761787466843868613, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281404083353432091, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5588980631725028432, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
       propertyPath: m_Name
       value: EndingSpot
@@ -2766,6 +2798,14 @@ PrefabInstance:
     - target: {fileID: 7533378218399991600, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
       propertyPath: scenename
       value: test 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560372558153347935, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667436311320242380, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
