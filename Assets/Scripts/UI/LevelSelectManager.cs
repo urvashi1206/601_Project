@@ -8,42 +8,31 @@ using UnityEngine.SceneManagement;
 
 public struct LevelData
 {
-    public string name;
+    public List<string> completed_levels;
 }
 
 public class LevelSelectManager : MonoBehaviour
 {
-    float maxX = 800f;
-    float maxY = 350f;
-    int rowSize = 5;
-    int columnSize = 5;
-
     public GameObject backToMenu;
     public GameObject mainMenu;
-
-    GameObject[] levelButtons;
 
     // Start is called before the first frame update
     void Start()
     {
-        Transform lvlParent = transform.Find("Levels");
-        if (File.Exists("SaveData/completed_evels.json"))
+        if (File.Exists("save_data/level_progress.json"))
         {
-            string[] json = File.ReadAllText("SaveData/completed_evels.json").Split("}");
-            for (int i = 0; i < json.Length - 1; i++) // the last element is an empty string so omit it
+            Transform lvlParent = transform.Find("Levels");
+            LevelData data = JsonUtility.FromJson<LevelData>(File.ReadAllText("save_data/level_progress.json"));
+            for (int i = 0; i < data.completed_levels.Count; i++) // the last element is an empty string so omit it
             {
                 if (i < lvlParent.childCount)
                 {
-                    // Get the ll data
-                    LevelData data = JsonUtility.FromJson<LevelData>(json[i] + "}");
-
-                    // Set the currently selected level button to reflect this data
+                    string lvlName = data.completed_levels[i];
                     Transform child = lvlParent.GetChild(i);
-                    child.GetChild(0).GetComponent<TextMeshPro>().text = data.name;
                     child.GetComponent<Button>().onClick.AddListener(() =>
                     {
                         SceneManager.LoadScene("World");
-                        WorldInitializer.LoadStartLevel(data.name);
+                        WorldInitializer.LoadStartLevel(lvlName);
                     });
                 }
             }
