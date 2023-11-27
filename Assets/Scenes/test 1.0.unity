@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 253079687}
   - component: {fileID: 253079686}
   - component: {fileID: 253079689}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5638,6 +5638,7 @@ MonoBehaviour:
   Level: test 1.0
   weirdDevice: {fileID: 3752768817626495159}
   firstArrowControl: {fileID: 676976626}
+  CK: {fileID: 0}
 --- !u!4 &496631958
 Transform:
   m_ObjectHideFlags: 0
@@ -5744,7 +5745,7 @@ GameObject:
   - component: {fileID: 540228567}
   - component: {fileID: 540228566}
   - component: {fileID: 540228569}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5872,7 +5873,7 @@ GameObject:
   - component: {fileID: 586275057}
   - component: {fileID: 586275056}
   - component: {fileID: 586275059}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6431,7 +6432,7 @@ GameObject:
   - component: {fileID: 1153335634}
   - component: {fileID: 1153335633}
   - component: {fileID: 1153335636}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7061,7 +7062,7 @@ GameObject:
   - component: {fileID: 1755578912}
   - component: {fileID: 1755578911}
   - component: {fileID: 1755578914}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7385,7 +7386,7 @@ GameObject:
   - component: {fileID: 2104160154}
   - component: {fileID: 2104160153}
   - component: {fileID: 2104160156}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7752,7 +7753,17 @@ PrefabInstance:
       value: 0.037000656
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4761787466843868613, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+    - {fileID: 7560372558153347935, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+    - {fileID: 618009741668613387, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+    - {fileID: 5281404083353432091, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+    - {fileID: 1335663422444237845, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+    - {fileID: 2688016437243490437, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+    - {fileID: 7667436311320242380, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+    - {fileID: 4683210057296413202, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+    - {fileID: 2073355965516545871, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+    - {fileID: 2050262771904833610, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
@@ -7809,9 +7820,11 @@ GameObject:
   - component: {fileID: 8359095979192051312}
   - component: {fileID: 1006180995125666974}
   - component: {fileID: 8359095979192051313}
+  - component: {fileID: 8359095979192051314}
+  - component: {fileID: 8359095979192051315}
   m_Layer: 0
   m_Name: MagicDevice
-  m_TagString: Untagged
+  m_TagString: MagicDevice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8050,6 +8063,40 @@ MonoBehaviour:
   starColor: {r: 0, g: 0.91954017, b: 1, a: 1}
   endColor: {r: 0.9550562, g: 0, b: 1, a: 1}
   speed: 0.3
+--- !u!114 &8359095979192051314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3752768817626495159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3006710baf4f5e948a7a94051730dfaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setDevice: 0
+--- !u!65 &8359095979192051315
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3752768817626495159}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.017888503, y: 0.0170128, z: 0.019999996}
+  m_Center: {x: 0, y: 0.0000000018626451, z: -0.0000000037252903}
 --- !u!4 &8903991418615103414
 Transform:
   m_ObjectHideFlags: 0

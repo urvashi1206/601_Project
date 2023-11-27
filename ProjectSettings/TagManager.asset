@@ -9,6 +9,7 @@ TagManager:
   - Z
   - EndingPoint
   - Death
+  - MagicDevice
   layers:
   - Default
   - TransparentFX

@@ -190,17 +190,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3165737155841128150, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
   m_PrefabInstance: {fileID: 8648406}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8648410 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6483219226356763098, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
-  m_PrefabInstance: {fileID: 8648406}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8648409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3051f0cd0cf9a94fb29ad9b1d1881af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &124548753 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1909396216136115762, guid: 5df5b6dd21de285418e19e5dd499615d, type: 3}
@@ -451,8 +440,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbd75b9d6e3f2b4991f2de68fe6fdae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CM: {fileID: 8648410}
   Level: test 1.1
+  weirdDevice: {fileID: 0}
+  firstArrowControl: {fileID: 0}
+  CK: {fileID: 0}
 --- !u!4 &285382649
 Transform:
   m_ObjectHideFlags: 0
@@ -2808,7 +2799,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4761787466843868613, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+    - {fileID: 7560372558153347935, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+    - {fileID: 618009741668613387, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+    - {fileID: 5281404083353432091, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+    - {fileID: 1335663422444237845, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+    - {fileID: 2688016437243490437, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+    - {fileID: 7667436311320242380, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+    - {fileID: 4683210057296413202, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+    - {fileID: 2073355965516545871, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
+    - {fileID: 2050262771904833610, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
