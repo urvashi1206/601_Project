@@ -4131,6 +4131,14 @@ PrefabInstance:
       propertyPath: m_PlaneDistance
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 2910395281262691830, guid: 5e15c8ddf7421404da1dc1d565ef517a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4436fac411570614e888122394ed3f49, type: 3}
+    - target: {fileID: 3030187486605626950, guid: 5e15c8ddf7421404da1dc1d565ef517a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4436fac411570614e888122394ed3f49, type: 3}
     - target: {fileID: 3168316082433839923, guid: 5e15c8ddf7421404da1dc1d565ef517a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4211,6 +4219,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4058143770693067339, guid: 5e15c8ddf7421404da1dc1d565ef517a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4436fac411570614e888122394ed3f49, type: 3}
     - target: {fileID: 4370848736518663174, guid: 5e15c8ddf7421404da1dc1d565ef517a, type: 3}
       propertyPath: m_Name
       value: LevelSelectCanvas
@@ -4223,6 +4235,26 @@ PrefabInstance:
       propertyPath: mainMenu
       value: 
       objectReference: {fileID: 1081441280}
+    - target: {fileID: 5123426606766223612, guid: 5e15c8ddf7421404da1dc1d565ef517a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4436fac411570614e888122394ed3f49, type: 3}
+    - target: {fileID: 5720325703338313579, guid: 5e15c8ddf7421404da1dc1d565ef517a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4436fac411570614e888122394ed3f49, type: 3}
+    - target: {fileID: 7702364089886102142, guid: 5e15c8ddf7421404da1dc1d565ef517a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -160
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865905051393157318, guid: 5e15c8ddf7421404da1dc1d565ef517a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4436fac411570614e888122394ed3f49, type: 3}
+    - target: {fileID: 8628817832332006478, guid: 5e15c8ddf7421404da1dc1d565ef517a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4436fac411570614e888122394ed3f49, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
