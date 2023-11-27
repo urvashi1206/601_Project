@@ -9,7 +9,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
-/save_data
+/save_data/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
