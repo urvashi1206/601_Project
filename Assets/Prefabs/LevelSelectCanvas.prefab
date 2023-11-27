@@ -292,6 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backToMenu: {fileID: 9016528006053450630}
   mainMenu: {fileID: 0}
+  unlockedIcon: {fileID: 21300000, guid: 6941828993a8cb948b918be1bfdf56be, type: 3}
 --- !u!1 &6803709382315767541
 GameObject:
   m_ObjectHideFlags: 0

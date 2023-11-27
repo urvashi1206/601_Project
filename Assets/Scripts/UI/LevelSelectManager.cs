@@ -17,6 +17,7 @@ public class LevelSelectManager : MonoBehaviour
 {
     public GameObject backToMenu;
     public GameObject mainMenu;
+    public Sprite unlockedIcon;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,7 @@ public class LevelSelectManager : MonoBehaviour
                 {
                     int index = i;
                     Transform child = lvlParent.GetChild(i);
+                    child.GetComponent<Image>().sprite = unlockedIcon;
                     child.GetComponent<Button>().onClick.AddListener(() =>
                     {
                         data.levelIndex = index;
