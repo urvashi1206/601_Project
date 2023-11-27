@@ -5,10 +5,12 @@ using System.IO;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public struct LevelData
 {
     public List<string> completed_levels;
+    public int levelIndex;
 }
 
 public class LevelSelectManager : MonoBehaviour
@@ -27,12 +29,13 @@ public class LevelSelectManager : MonoBehaviour
             {
                 if (i < lvlParent.childCount)
                 {
-                    string lvlName = data.completed_levels[i];
+                    int index = i;
                     Transform child = lvlParent.GetChild(i);
                     child.GetComponent<Button>().onClick.AddListener(() =>
                     {
+                        data.levelIndex = index;
+                        File.WriteAllText("save_data/level_progress.json", JsonUtility.ToJson(data));
                         SceneManager.LoadScene("World");
-                        WorldInitializer.LoadStartLevel(lvlName);
                     });
                 }
             }

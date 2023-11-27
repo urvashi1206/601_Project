@@ -24,23 +24,12 @@ public class LevelChange : MonoBehaviour
     {
         if (collision.gameObject.name == "character")
         {
-            LevelData data = new LevelData();
-            data.completed_levels = new();
-
-            // If data doesn't exit yet, create it
-            if (!Directory.Exists("save_data"))
-            {
-                Directory.CreateDirectory("save_data");
-            }
-            else if (File.Exists("save_data/level_progress.json"))
-            {
-                data = JsonUtility.FromJson<LevelData>(File.ReadAllText("save_data/level_progress.json"));
-            }
+            LevelData data = JsonUtility.FromJson<LevelData>(File.ReadAllText("save_data/level_progress.json"));
 
             // if not already completed, add this level to the list of completed levels
-            if (!data.completed_levels.Contains(gameObject.scene.name))
+            if (!data.completed_levels.Contains(scenename))
             {
-                data.completed_levels.Add(gameObject.scene.name);
+                data.completed_levels.Add(scenename);
             }
 
             // overwrite w/ new data
