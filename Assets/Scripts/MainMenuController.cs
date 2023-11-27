@@ -11,6 +11,8 @@ public class MainMenuController : MonoBehaviour
     public GameObject controlsButton;
     public GameObject lvlSelectorButton;
     public GameObject quitButton;
+    public GameObject lvlSelectCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +40,8 @@ public class MainMenuController : MonoBehaviour
 
     void LevelSelectorButtonClicked()
     {
-        Debug.Log("This function is not implemented yet.");
+        gameObject.SetActive(false);
+        lvlSelectCanvas.gameObject.SetActive(true);
     }
 
     void ControlsButtonClicked()
