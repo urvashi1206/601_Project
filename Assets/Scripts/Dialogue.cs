@@ -11,11 +11,13 @@ public class Dialogue : MonoBehaviour
     public string Level;
     public GameObject weirdDevice;
     public GameObject firstArrowControl;
+    public Click CK;
+    
 
     void Start()
     {
         CharacterMovement CM = CharacterMovement.Get();
-
+        //Debug.Log(click);
         if (Level == "test 1.0")
         {
             CM.QueueDialoguePause(1f);
@@ -27,9 +29,12 @@ public class Dialogue : MonoBehaviour
             CM.QueueDialogue("Wait... what's this? It's beautiful...");
 
             // Direct player's attention toward the device
-            CM.QueueDialoguePause(5f, () => CM.EnableVisualFocus(
-                Camera.main.WorldToScreenPoint(weirdDevice.transform.position)));
-
+            CM.QueueDialoguePause(5f, () =>
+            {
+                CM.EnableVisualFocus(Camera.main.WorldToScreenPoint(weirdDevice.transform.position));
+                GameObject.FindWithTag("MagicDevice").GetComponent<Click>().setDevice = true;
+            });
+            //click.ClickObject();
             CM.QueueDialogue("Whoa! This sensation...", () => CM.DisableVisualFocus());
             CM.QueueDialogue("Let me try something...");
 
@@ -50,5 +55,10 @@ public class Dialogue : MonoBehaviour
                 CM.QueueDialogue("Perhaps I can escape.");
             }
         }
+    }
+
+    private void Update()
+    {
+        //FindObjectOfType<Click>().ClickObject();
     }
 }

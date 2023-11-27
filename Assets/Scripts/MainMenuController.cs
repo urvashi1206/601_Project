@@ -43,6 +43,6 @@ public class MainMenuController : MonoBehaviour
 
     void ControlsButtonClicked()
     {
-        Debug.Log("This function is not implemented yet.");
+        SceneManager.LoadScene("HowToPlay");
     }
 }
