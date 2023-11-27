@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class LevelChange : MonoBehaviour
 {
@@ -23,6 +24,17 @@ public class LevelChange : MonoBehaviour
     {
         if (collision.gameObject.name == "character")
         {
+            LevelData data = JsonUtility.FromJson<LevelData>(File.ReadAllText("save_data/level_progress.json"));
+
+            // if not already completed, add this level to the list of completed levels
+            if (!data.completed_levels.Contains(scenename))
+            {
+                data.completed_levels.Add(scenename);
+            }
+
+            // overwrite w/ new data
+            File.WriteAllText("save_data/level_progress.json", JsonUtility.ToJson(data));
+
             if (unloadAllOtherScenes)
             {
                 SceneManager.LoadScene(scenename);

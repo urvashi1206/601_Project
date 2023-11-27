@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.IO;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class MainMenuController : MonoBehaviour
     public GameObject controlsButton;
     public GameObject lvlSelectorButton;
     public GameObject quitButton;
+    public GameObject lvlSelectCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,18 @@ public class MainMenuController : MonoBehaviour
 
     void PlayButtonClicked()
     {
+        // starting a new game; create fresh save data
+        if (!Directory.Exists("save_data"))
+        {
+            Directory.CreateDirectory("save_data");
+        }
+        LevelData newData = new();
+        newData.completed_levels = new();
+        newData.completed_levels.Add("test 1.0");
+        newData.levelIndex = 0;
+        File.WriteAllText("save_data/level_progress.json", JsonUtility.ToJson(newData));
+
+        // Begin the intro cutscene
         SceneManager.LoadScene("NarrativeStart");
     }
 
@@ -38,7 +53,8 @@ public class MainMenuController : MonoBehaviour
 
     void LevelSelectorButtonClicked()
     {
-        Debug.Log("This function is not implemented yet.");
+        gameObject.SetActive(false);
+        lvlSelectCanvas.gameObject.SetActive(true);
     }
 
     void ControlsButtonClicked()
