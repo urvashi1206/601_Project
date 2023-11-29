@@ -706,6 +706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startupLevel: test 1.0
+  startupFromSaveData: 1
 --- !u!4 &130210715
 Transform:
   m_ObjectHideFlags: 0
