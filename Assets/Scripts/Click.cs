@@ -29,6 +29,7 @@ public class Click : MonoBehaviour
                     {
                         if (gameObject.CompareTag("MagicDevice"))
                         {
+                            GameObject.FindWithTag("Dialogue").GetComponent<Dialogue>().setArrow = true;
                             GameObject.FindGameObjectWithTag("MagicDevice").SetActive(false);
                         }
                     }
