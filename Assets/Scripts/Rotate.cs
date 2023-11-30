@@ -46,8 +46,7 @@ public class Rotate : MonoBehaviour
         }
         if (onrotation)
         {
-            timer += Time.deltaTime;
-            if (timer > (1 / 0.7))
+            if (timer > (1/0.7))
             {
                 timer = 0;
                 onrotation = false;
@@ -58,7 +57,7 @@ public class Rotate : MonoBehaviour
             else
             {
                 timer += Time.deltaTime;
-                scene.transform.rotation = Quaternion.Euler(-90 * Time.deltaTime * 0.7f, 0 * Time.deltaTime * 0.7f, 0 * Time.deltaTime * 0.7f) * scene.transform.rotation;
+                scene.transform.rotation = Quaternion.Euler(-90f * Time.deltaTime * 0.7f, 0 * Time.deltaTime * 0.7f, 0 * Time.deltaTime * 0.7f) * scene.transform.rotation;
             }
         }
     }
