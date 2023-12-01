@@ -13,11 +13,12 @@ public class CharacterMovement : MonoBehaviour
 
     // Start is called before the first frame update
     float timer = 0;
-    public GameObject head, forearm_l, forearm_r, upperarm_l, upperarm_r, shoulder_l, shoulder_r, spine003,spine, metarig;
+    public GameObject head;
     public GameObject EndSpot;
     public bool onrotation;
     public ArrowMovement[] xyzObjects;
     public GameObject playerUI;
+    public Animator anim;
 
     GameObject uiSpeechBubble;
     GameObject screenFocusFade;
@@ -47,17 +48,6 @@ public class CharacterMovement : MonoBehaviour
 
     void Start()
     {
-        head = GameObject.Find("head");
-        upperarm_l = GameObject.Find("upper_arm.L");
-        upperarm_r = GameObject.Find("upper_arm.R");
-        shoulder_l = GameObject.Find("shoulder.L");
-        shoulder_r = GameObject.Find("shoulder.R");
-        spine003 = GameObject.Find("spine.003");
-        spine = GameObject.Find("spine");
-        metarig = GameObject.Find("metarig.001");
-        forearm_l = GameObject.Find("forearm.L"); 
-        forearm_r = GameObject.Find("forearm.R");
-
         EndSpot = GameObject.Find("EndingSpot");
         uiSpeechBubble = playerUI.transform.Find("SpeechBubble").gameObject;
         screenFocusFade = playerUI.transform.Find("Gradient").gameObject;
@@ -66,14 +56,6 @@ public class CharacterMovement : MonoBehaviour
         look_at_endpoint();
         onrotation = false;
         xyzObjects = GameObject.FindObjectsOfType<ArrowMovement>();
-        //(5.366f, -95.797f, -6.632) (5.366f, 95.797f, 6.632)
-        upperarm_l.transform.rotation = shoulder_l.transform.rotation * Quaternion.Euler(5.366f, -95.797f, 80);
-        upperarm_r.transform.rotation = shoulder_r.transform.rotation * Quaternion.Euler(5.366f, 95.797f, -80);
-        forearm_l.transform.rotation = upperarm_l.transform.rotation * Quaternion.Euler(90, 150, 150);
-        forearm_r.transform.rotation = upperarm_r.transform.rotation * Quaternion.Euler(90, -150, -150);
-        //Debug.Log(metarig.transform.rotation.eulerAngles);
-        //Debug.Log(transform.rotation.eulerAngles);
-        //Debug.Log(upperarm_l.transform.rotation.eulerAngles);
     }
 
     public void look_at_endpoint()
@@ -98,6 +80,7 @@ public class CharacterMovement : MonoBehaviour
         {
             if (Vector3.Dot(transform.up, Vector3.up) < 0.99)
             {
+                anim.SetTrigger("IsLanded");
                 GetComponent<Rigidbody>().isKinematic = true;
                 GetComponent<BoxCollider>().enabled = false;
                 //character stand up
