@@ -12,10 +12,10 @@ public class CharacterMovement : MonoBehaviour
     public delegate void DialogueCallback();
 
     // Start is called before the first frame update
-    float timer = 0;
+    public float timer = 0, g_timer = 0;
     public GameObject head;
     public GameObject EndSpot;
-    public bool onrotation;
+    public bool onrotation, ongetup;
     public ArrowMovement[] xyzObjects;
     public GameObject playerUI;
     public Animator anim;
@@ -49,12 +49,14 @@ public class CharacterMovement : MonoBehaviour
     void Start()
     {
         EndSpot = GameObject.Find("EndingSpot");
+        head = GameObject.Find("MCH-ROT-head");
         uiSpeechBubble = playerUI.transform.Find("SpeechBubble").gameObject;
         screenFocusFade = playerUI.transform.Find("Gradient").gameObject;
 
         //character facing endpoint
         look_at_endpoint();
         onrotation = false;
+        ongetup = false;
         xyzObjects = GameObject.FindObjectsOfType<ArrowMovement>();
     }
 
@@ -76,22 +78,39 @@ public class CharacterMovement : MonoBehaviour
         {
             timer = 0;
         }
-        if(timer > 1)
+        if(timer > 0.25)
         {
             if (Vector3.Dot(transform.up, Vector3.up) < 0.99)
             {
-                anim.SetTrigger("IsLanded");
-                GetComponent<Rigidbody>().isKinematic = true;
-                GetComponent<BoxCollider>().enabled = false;
-                //character stand up
-                transform.position += new Vector3(0, 1, 0);
-                transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
-                //character facing endpoint
-                Vector3 dir = EndSpot.transform.position;
-                transform.LookAt(new Vector3(dir.x, transform.position.y, dir.z));
-                head.transform.LookAt(dir);
-                GetComponent<Rigidbody>().isKinematic = false;
-                GetComponent<BoxCollider>().enabled = true;
+                if(ongetup)
+                {
+                    g_timer ++;
+                    if(g_timer > 9)
+                    {
+                        g_timer = 0;
+                        ongetup = false;
+                        anim.SetTrigger("IsLanded");
+                        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+                        //character facing endpoint
+                        Vector3 dir = EndSpot.transform.position;
+                        transform.LookAt(new Vector3(dir.x, transform.position.y, dir.z));
+                        head.transform.LookAt(dir);
+                        Debug.Log("Should not run");
+                    }
+                }
+                else
+                {
+                    anim.SetTrigger("IsLanded");
+                    ongetup = true;
+                    GetComponent<Rigidbody>().isKinematic = true;
+                    GetComponent<BoxCollider>().enabled = false;
+                    //character stand up
+                    //transform.position += new Vector3(0, 1, 0);
+                    //transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+                    GetComponent<Rigidbody>().isKinematic = false;
+                    GetComponent<BoxCollider>().enabled = true;
+                    Debug.Log("Should run");
+                }
             }
             foreach (ArrowMovement xyzobject in xyzObjects)
             {
