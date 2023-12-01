@@ -443,7 +443,9 @@ MonoBehaviour:
   Level: test 1.1
   weirdDevice: {fileID: 0}
   firstArrowControl: {fileID: 0}
+  setArrow: 0
   CK: {fileID: 0}
+  ArrowClick: 0
 --- !u!4 &285382649
 Transform:
   m_ObjectHideFlags: 0

@@ -3301,6 +3301,7 @@ MonoBehaviour:
   onrotation: 0
   xyzObjects: []
   playerUI: {fileID: 917958365651253304}
+  anim: {fileID: 2171463892665768545}
 --- !u!1 &3180780677787262859
 GameObject:
   m_ObjectHideFlags: 0
