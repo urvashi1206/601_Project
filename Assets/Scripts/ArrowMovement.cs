@@ -137,6 +137,10 @@ public class ArrowMovement : MonoBehaviour
                 scene.transform.rotation = r_des;
                 c_rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
                 c_rigidbody.velocity = Vector3.zero;
+                foreach (ArrowMovement xyzobject in xyzObjects)
+                {
+                    xyzobject.GetComponent<BoxCollider>().enabled = true;
+                }
             }
             else
             {

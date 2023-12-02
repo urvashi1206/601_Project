@@ -12,10 +12,13 @@ public class CharacterMovement : MonoBehaviour
     public delegate void DialogueCallback();
 
     // Start is called before the first frame update
-    public float timer = 0, g_timer = 0;
+    public float timer = 0, g_timer = 0, l_timer = 0;
+    public Vector3 start, end;
+    public Vector2 start2, end2;
+    float angle;
     public GameObject head;
     public GameObject EndSpot;
-    public bool onrotation, ongetup;
+    public bool onrotation, ongetup, onlookat;
     public ArrowMovement[] xyzObjects;
     public GameObject playerUI;
     public Animator anim;
@@ -57,6 +60,7 @@ public class CharacterMovement : MonoBehaviour
         look_at_endpoint();
         onrotation = false;
         ongetup = false;
+        onlookat = false;
         xyzObjects = GameObject.FindObjectsOfType<ArrowMovement>();
     }
 
@@ -70,6 +74,29 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (onlookat)
+        {
+            l_timer += Time.deltaTime;
+            float t = 180 * l_timer / (2 * angle);
+            float t_angle = angle * t;
+            Debug.Log(t_angle);
+            Vector2 t_pointer = new Vector2(start2.x*Mathf.Cos(t_angle*Mathf.Deg2Rad)-start2.y*Mathf.Sin(t_angle * Mathf.Deg2Rad),start2.x * Mathf.Sin(t_angle * Mathf.Deg2Rad) + start2.y * Mathf.Cos(t_angle * Mathf.Deg2Rad));
+            Debug.Log(t_pointer);
+            transform.LookAt(new Vector3(t_pointer.x+transform.position.x, transform.position.y, t_pointer.y + transform.position.z));
+            //Debug.Log(t);
+            //transform.LookAt(end);
+            //Debug.Log("hi");
+            if (l_timer > 2*angle/180)
+            {
+                l_timer = 0;
+                onlookat = false;
+                transform.LookAt(end);
+                foreach (ArrowMovement xyzobject in xyzObjects)
+                {
+                    xyzobject.GetComponent<BoxCollider>().enabled = true;
+                }
+            }
+        }
         if(GetComponent<Rigidbody>().velocity.magnitude < 0.001 && !onrotation)
         {
             timer += Time.deltaTime;
@@ -93,9 +120,17 @@ public class CharacterMovement : MonoBehaviour
                         transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
                         //character facing endpoint
                         Vector3 dir = EndSpot.transform.position;
-                        transform.LookAt(new Vector3(dir.x, transform.position.y, dir.z));
-                        head.transform.LookAt(dir);
-                        Debug.Log("Should not run");
+                        start = transform.forward;
+                        end = new Vector3(dir.x, transform.position.y, dir.z);
+                        start2 = new Vector2(start.x, start.z);
+                        end2 = new Vector2(dir.x-transform.position.x, dir.z-transform.position.z);
+                        angle = Vector2.Angle(start2, end2);
+                        Debug.Log(angle);
+                        //Debug.Log(start2);
+                        //Debug.Log(end2);
+                        onlookat = true;
+                        //transform.LookAt(new Vector3(dir.x, transform.position.y, dir.z));
+                        //head.transform.LookAt(dir);
                     }
                 }
                 else
@@ -111,10 +146,6 @@ public class CharacterMovement : MonoBehaviour
                     GetComponent<BoxCollider>().enabled = true;
                     Debug.Log("Should run");
                 }
-            }
-            foreach (ArrowMovement xyzobject in xyzObjects)
-            {
-                xyzobject.GetComponent<BoxCollider>().enabled = true;
             }
             timer = 0;
         }
