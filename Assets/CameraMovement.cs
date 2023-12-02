@@ -1,30 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using System.Threading;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using Unity.Mathematics;
-using UnityEngine.UIElements;
 
-public class Hole : MonoBehaviour
+public class CameraMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    //private float speed = 8f;
-    public ParticleSystem particleSystem;
-    public Animator anim;
     public Vector3 pos = Vector3.zero;
-    private float timer, fadeout_timer;
-    bool fall;
+    private float timer;
+    GameObject character;
     [HideInInspector] public Vector3 vs, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, ve;
     [HideInInspector] public Quaternion q0, q1, q2, q3, q4, q5, q6, q7, q8, q9;
-
     void Start()
     {
+        character = GameObject.Find("character");
+        pos = character.transform.position;
+        transform.LookAt(pos);
         timer = 0;
-        fadeout_timer = 0;
-        fall = false;
         vs = transform.position + new Vector3(0, 0, 13.2f);
         v0 = transform.position;
         v1 = transform.position + new Vector3(0, 0, -13.2f);
@@ -83,63 +73,41 @@ public class Hole : MonoBehaviour
         if (timer <= 4)
         {
             //transform.position += new Vector3(0, 0, -26.4f * Time.deltaTime / 7);
-            catmull_rom(vs, v0, v1, v2, timer/4);
-            transform.LookAt(2*transform.position-pos);
-            pos = transform.position;
+            catmull_rom(vs, v0, v1, v2, timer / 4);
+            pos = character.transform.position;
+            transform.LookAt(pos);
         }
         else if (timer <= 8)
         {
-            catmull_rom(v0, v1, v2, v3, (timer - 4)/4);
-            transform.LookAt(2 * transform.position - pos);
-            pos = transform.position;
-            //slerp_rotate(q0, q1, (timer - 4)/4);
+            catmull_rom(v0, v1, v2, v3, (timer - 4) / 4);
+            pos = character.transform.position;
+            transform.LookAt(pos);
         }
         else if (timer <= 10)
         {
-            catmull_rom(v1, v2, v3, v4, (timer - 8)/2);
-            transform.LookAt(2 * transform.position - pos);
-            pos = transform.position;
-            //slerp_rotate(q1, q2, (timer - 8) / 2);
+            catmull_rom(v1, v2, v3, v4, (timer - 8) / 2);
+            pos = character.transform.position;
+            transform.LookAt(pos);
         }
         else if (timer <= 13)
         {
             catmull_rom(v2, v3, v4, v5, (timer - 10) / 3);
-            transform.LookAt(2 * transform.position - pos);
-            pos = transform.position;
-            //transform.position += new Vector3(17.6f * Time.deltaTime / 7, 0, 0);
+            pos = character.transform.position;
+            transform.LookAt(pos);
         }
         else if (timer <= 16)
         {
             //transform.rotation = Quaternion.Euler(0, 90 * Time.deltaTime, 0) * transform.rotation;
             catmull_rom(v3, v4, v5, v6, (timer - 13) / 3);
-            transform.LookAt(2 * transform.position - pos);
-            pos = transform.position;
+            pos = character.transform.position;
+            transform.LookAt(pos);
         }
         else if (timer <= 17)
         {
             //transform.position += new Vector3(0, 0, -26.4f * Time.deltaTime / 7);
             catmull_rom(v4, v5, v6, ve, (timer - 16) / 1);
-            transform.LookAt(2 * transform.position - pos);
-            pos = transform.position;
-        }
-        if (fall)
-        {
-            fadeout_timer += Time.deltaTime;
-            if(fadeout_timer > 1)
-            {
-                anim.SetTrigger("FadeOut");
-            }
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.name == "PlanetoTouch")
-        {
-            particleSystem.Play();
-            GameObject.Find("RocksAboveTheHole").GetComponent<Rigidbody>().useGravity = true;
-            Destroy(collision.gameObject);
-            fall = true;
+            pos = character.transform.position;
+            transform.LookAt(pos);
         }
     }
 }
