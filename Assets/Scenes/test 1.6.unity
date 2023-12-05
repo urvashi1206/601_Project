@@ -3537,11 +3537,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4219890837244213680, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
       propertyPath: scenename
-      value: MainMenu
+      value: test 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 4219890837244213680, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
       propertyPath: unloadAllOtherScenes
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4683210057296413202, guid: 022db4f08f72b4c40bc45f5c3e899f39, type: 3}
       propertyPath: m_IsActive
