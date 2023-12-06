@@ -8967,6 +8967,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6758910910101099820, guid: f0a91a03c091ce74f92de54a1d362e1b, type: 3}
+      propertyPath: quitButton
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7392022176310690671, guid: f0a91a03c091ce74f92de54a1d362e1b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
