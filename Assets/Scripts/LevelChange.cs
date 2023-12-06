@@ -24,16 +24,22 @@ public class LevelChange : MonoBehaviour
     {
         if (collision.gameObject.name == "character")
         {
-            LevelData data = JsonUtility.FromJson<LevelData>(File.ReadAllText("save_data/level_progress.json"));
-
-            // if not already completed, add this level to the list of completed levels
-            if (!data.completed_levels.Contains(scenename))
+            // because the narrative scene is using this script too, apparently, 
+            // make sure the World isn't added to the save data or the World scene
+            // will additively load itself infinitely
+            if (scenename != "World")
             {
-                data.completed_levels.Add(scenename);
-            }
+                LevelData data = JsonUtility.FromJson<LevelData>(File.ReadAllText("save_data/level_progress.json"));
 
-            // overwrite w/ new data
-            File.WriteAllText("save_data/level_progress.json", JsonUtility.ToJson(data));
+                // if not already completed, add this level to the list of completed levels
+                if (!data.completed_levels.Contains(scenename))
+                {
+                    data.completed_levels.Add(scenename);
+                }
+
+                // overwrite w/ new data
+                File.WriteAllText("save_data/level_progress.json", JsonUtility.ToJson(data));
+            }
 
             if (unloadAllOtherScenes)
             {
