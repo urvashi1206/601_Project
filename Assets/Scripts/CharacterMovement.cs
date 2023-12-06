@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Reflection;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -78,9 +77,10 @@ public class CharacterMovement : MonoBehaviour
         {
             l_timer += Time.deltaTime;
             float t = 180 * l_timer / (2 * angle);
-            float t_angle = angle * t;
-            Debug.Log(t_angle);
-            Vector2 t_pointer = new Vector2(start2.x*Mathf.Cos(t_angle*Mathf.Deg2Rad)-start2.y*Mathf.Sin(t_angle * Mathf.Deg2Rad),start2.x * Mathf.Sin(t_angle * Mathf.Deg2Rad) + start2.y * Mathf.Cos(t_angle * Mathf.Deg2Rad));
+            //float t_angle = angle * t;
+            //Debug.Log(t_angle);
+            //Vector2 t_pointer = new Vector2(start2.x*Mathf.Cos(t_angle*Mathf.Deg2Rad)-start2.y*Mathf.Sin(t_angle * Mathf.Deg2Rad),start2.x * Mathf.Sin(t_angle * Mathf.Deg2Rad) + start2.y * Mathf.Cos(t_angle * Mathf.Deg2Rad));
+            Vector2 t_pointer = Vector2.Lerp(start2, end2, t);
             Debug.Log(t_pointer);
             transform.LookAt(new Vector3(t_pointer.x+transform.position.x, transform.position.y, t_pointer.y + transform.position.z));
             //Debug.Log(t);
