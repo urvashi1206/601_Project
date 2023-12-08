@@ -135,6 +135,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: character
       objectReference: {fileID: 0}
+    - target: {fileID: 7489500203716380941, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489500203716380941, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489500203716380941, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8648407}
+    - target: {fileID: 7489500203716380941, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489500203716380941, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489500203716380941, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ResetButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489500203716380941, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: test 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489500203716380941, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7973017875951988991, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
@@ -180,6 +212,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
+--- !u!114 &8648407 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2480055682555006242, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
+  m_PrefabInstance: {fileID: 8648406}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf5b17227097e424da864e4e4e5d43be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8648408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7973017875951988991, guid: 32f63fa409bbe274588e99d5846738a5, type: 3}
