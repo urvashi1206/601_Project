@@ -4,16 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class EndCutscene : MonoBehaviour
+public class CloseEnd : MonoBehaviour
 {
-    public Animator CurtainAnim;
-
-    [SerializeField] private Button ClickEvent;
     // Start is called before the first frame update
+    private Button Close;
+    public Animator CurtainAnim;
     void Start()
     {
-        ClickEvent = GameObject.Find("Newspaper").GetComponent<Button>();
-        ClickEvent.onClick.AddListener(IsClicked);
+        Close = GetComponent<Button>();
+        Close.onClick.AddListener(EndCutscene);
     }
 
     // Update is called once per frame
@@ -21,13 +20,11 @@ public class EndCutscene : MonoBehaviour
     {
         
     }
-
-    private void IsClicked()
+    void EndCutscene()
     {
-        // Click the newspaper and then set the fade_out parameter to true
         Debug.Log("Click happens");
 
-        CurtainAnim.SetTrigger("Black");
+        CurtainAnim.SetTrigger("CloseNewspaper");
 
         SceneManager.LoadScene("MainMenu");
     }
