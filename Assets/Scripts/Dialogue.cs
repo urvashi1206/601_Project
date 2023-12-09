@@ -12,11 +12,10 @@ public class Dialogue : MonoBehaviour
     public GameObject weirdDevice;
     public GameObject firstArrowControl;
     public bool setArrow;
-    public Click CK;
     CharacterMovement CM;
     public bool ArrowClick;
-
-
+    public GameObject Arrow1;
+    public GameObject Arrow2;
 
     void Start()
     {
@@ -37,6 +36,8 @@ public class Dialogue : MonoBehaviour
             // Direct player's attention toward the device
             CM.QueueDialoguePause(5f, () =>
             {
+                Arrow1.SetActive(true);
+                GameObject.FindWithTag("MouseHide").GetComponent<Mouse>().isActive = true;
                 CM.EnableVisualFocus(Camera.main.WorldToScreenPoint(weirdDevice.transform.position));
                 GameObject.FindWithTag("MagicDevice").GetComponent<Click>().setDevice = true;
             });
@@ -62,6 +63,7 @@ public class Dialogue : MonoBehaviour
             // Direct the player's attention toward the arrow control
             CM.QueueDialoguePause(4f, () =>
             {
+                Arrow2.SetActive(true);
                 CM.EnableVisualFocus(Camera.main.WorldToScreenPoint(firstArrowControl.transform.position));
                 firstArrowControl.GetComponent<BoxCollider>().enabled = true;
             });

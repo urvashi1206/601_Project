@@ -12,6 +12,7 @@ TagManager:
   - MagicDevice
   - rotate
   - Dialogue
+  - MouseHide
   layers:
   - Default
   - TransparentFX

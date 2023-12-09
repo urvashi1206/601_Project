@@ -36,6 +36,7 @@ public class Rotate : MonoBehaviour
                 {
                     if (gameObject.CompareTag("rotate"))
                     {
+                        Destroy(GameObject.FindWithTag("Dialogue").GetComponent<Dialogue>().Arrow2);
                         GameObject.FindWithTag("Dialogue").GetComponent<Dialogue>().ArrowClick = true;
                         onrotation = true;
                         r_des = Quaternion.Euler(-90, 0, 0) * scene.transform.rotation;
