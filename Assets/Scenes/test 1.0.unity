@@ -256,7 +256,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b017dfab3916c1342b99c499d7ab500b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6fdfcd4167ed5e7488584241bb671bb2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b594fa85194ff9448ec1f3d0d87e0b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  repeatTime: 0.25
+  repeatTime: 0.5
 --- !u!4 &223514683 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7773426863508209201, guid: de328e289cbe7be4f84ac4fcd76f03bd, type: 3}
@@ -6599,7 +6599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b594fa85194ff9448ec1f3d0d87e0b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  repeatTime: 0.25
+  repeatTime: 0.5
 --- !u!212 &1163263032
 SpriteRenderer:
   m_ObjectHideFlags: 0
