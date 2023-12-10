@@ -31,9 +31,9 @@ public class Hole : MonoBehaviour
         v2 = transform.position + new Vector3(0, 0, -26.4f);
         v3 = transform.position + new Vector3(5f, 0, -26.4f);
         v4 = transform.position + new Vector3(12.8f, 0, -26.4f);
-        v5 = transform.position + new Vector3(17.6f, 0, -26.4f);
+        v5 = transform.position + new Vector3(17.6f, 0, -27.4f);
         v6 = transform.position + new Vector3(17.6f, 0, -29f);
-        ve = transform.position + new Vector3(17.6f, 0, -35f);
+        ve = transform.position + new Vector3(17.6f, 0, -29.4f);
     }
     void catmull_rom(Vector3 vs, Vector3 v0, Vector3 v1, Vector3 v2, float t)
     {
