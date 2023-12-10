@@ -12,7 +12,7 @@ public class Hole : MonoBehaviour
 {
     // Start is called before the first frame update
     //private float speed = 8f;
-    public ParticleSystem particleSystem;
+    public GameObject particleSystemObj;
     public Animator anim;
     public Vector3 pos = Vector3.zero;
     private float timer, fadeout_timer;
@@ -136,7 +136,9 @@ public class Hole : MonoBehaviour
     {
         if (collision.gameObject.name == "PlanetoTouch")
         {
-            particleSystem.Play();
+            particleSystemObj.GetComponent<ParticleSystem>().Play();
+            particleSystemObj.GetComponent<AudioSource>().Play();
+
             GameObject.Find("RocksAboveTheHole").GetComponent<Rigidbody>().useGravity = true;
             Destroy(collision.gameObject);
             fall = true;

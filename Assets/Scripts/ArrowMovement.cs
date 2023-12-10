@@ -56,6 +56,7 @@ public class ArrowMovement : MonoBehaviour
                 {
                     if (_hit.transform == transform)
                     {
+                        GetComponent<AudioSource>().Play();
                         if (gameObject.CompareTag("X"))
                         {
                             //lock button
