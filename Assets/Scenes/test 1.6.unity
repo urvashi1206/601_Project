@@ -460,6 +460,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathZone
       objectReference: {fileID: 0}
+    - target: {fileID: 7624278403830155263, guid: 25c68010e1e38f44da813bb2e1f3a5de, type: 3}
+      propertyPath: scenename
+      value: test 1.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
